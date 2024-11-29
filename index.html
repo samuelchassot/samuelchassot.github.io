@@ -84,17 +84,25 @@
               href="https://github.com/epfl-lara/stainless">Stainless</a>, a verifier for a subset of Scala that uses
             SMT solvers to find counterexamples to contracts or prove their validity.</p>
 
+            <p>My main goal with my thesis is to make software verification more accessible. 
+              I plan to contribute in that direction through two axes: first, by developing 
+              a library of verified software or verified frameworks (e.g., data structures, a regular 
+              expression matching engine, a lexing framework), and second, by contributing to tool 
+              development to make verifying software easier and, therefore, more widespread. 
+
           <p>My recent projects include:</p>
           <ul>
             <li><b>Verifying the LongMap of the Scala standard library</b>, a mutable hashtable based on open
               addressing. This
-              work will be published at IJCAR24.</li>
+              work has been published at IJCAR24. This verification work led to the discovery of a bug in the standard 
+              library implementation. I proposed a fix that I fully formally verified, which has been accepted.</li>
             <li>Implementing and verifying an implementation of <b>Regex matching with derivatives</b>. I then use this
               Regex
-              engine to implement a <b>lexer</b> (or tokeniser) that is verified to be correct and invertible.</li>
+              engine to implement a <b>lexer</b> (or tokeniser) that is verified to be correct and invertible under 
+              certain conditions.</li>
             <li>Verifying the correctness of the implementation of a <b>serialization protocol, ESN1</b>, in
               collaboration with
-              the European Space Agency.</li>
+              the European Space Agency. This work will be published at VMCAI25.</li>
           </ul>
 
           <p>Some of my verification work is available on <a href="https://github.com/epfl-lara/bolts">Bolts</a>, a
