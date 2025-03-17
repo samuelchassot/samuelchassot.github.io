@@ -36,7 +36,7 @@ body {
 
 /* Sidebar: narrower column */
 .sidebar {
-  flex: 0 0 250px; /* fixed width on bigger screens */
+  flex: 0 0 280px; /* fixed width on bigger screens */
   background: #fff;
   padding: 1rem;
   border-radius: 4px;
@@ -44,7 +44,7 @@ body {
 }
 
 /* On smaller screens, it’s simply the top block */
-@media (max-width: 767px) {
+@media (max-width: 600px) {
   .sidebar {
     width: 100%;
   }
@@ -103,7 +103,7 @@ body {
 
 .section h2 {
   margin-bottom: 0.75rem;
-  color: #00bcd4; /* accent color for headings */
+  color: #00bcd4; /* accent color */
 }
 
 .section ul {
@@ -130,5 +130,5 @@ body {
 }
 
 p {
-  margin-bottom: 1rem; /* Adjust the value (e.g., 0.5rem or 1.5rem) to get the spacing you prefer */
+  margin-bottom: 1rem; 
 }
