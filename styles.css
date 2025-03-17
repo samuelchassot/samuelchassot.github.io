@@ -1,6 +1,12 @@
 /* ----------------------------------
    BASIC RESET & DEFAULTS
 ---------------------------------- */
+
+:root {
+  --accent: #0b94a6;
+  --white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -82,7 +88,7 @@ body {
 }
 
 .sidebar a {
-  color: #0b94a6; /* accent color */
+  color: var(--accent);
   text-decoration: none;
 }
 
@@ -103,7 +109,7 @@ body {
 
 .section h2 {
   margin-bottom: 0.75rem;
-  color: #0b94a6; /* accent color */
+  color: var(--accent);
 }
 
 .section ul {
