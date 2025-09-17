@@ -2,198 +2,192 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="PhD student at EPFL focusing on Formal Methods and Software Verification.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Samuel Chassot</title>
-  <!-- Google Fonts: Roboto -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap">
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/8c2d4754eb.js" crossorigin="anonymous"></script>
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --primary: #0bbec4;
+      --background: #ffffff;
+      --foreground: #0f172a;
+      --muted: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.65;
+      font-size: 1.05rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 1rem;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .links {
+      margin-top: 1rem;
+    }
+
+    .links a {
+      color: var(--primary);
+      margin: 0 0.5rem;
+      font-size: 1.7rem;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--muted);
+      padding-bottom: 0.5rem;
+    }
+
+    .section p {
+      margin-bottom: 1rem;
+    }
+
+    .section ul {
+      list-style: disc;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .section li {
+      margin-bottom: 0.5rem;
+    }
+
+    .section a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .section a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="res/Samuel_pp.jpeg" alt="Portrait of Samuel Chassot">
+    <h1>Samuel Chassot</h1>
+    <p>PhD Candidate @ LARA, EPFL | Formal Methods & Verification</p>
+    <div class="links">
+      <a href="mailto:samuel.chassot@epfl.ch"><i class="fa fa-envelope"></i></a>
+      <a href="https://github.com/samuelchassot" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="https://orcid.org/0009-0000-9751-9252" target="_blank"><i class="fa-brands fa-orcid"></i></a>
+      <a href="https://scholar.google.com/citations?user=yL85RAUAAAAJ&hl=fr&oi=ao" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>
+    </div>
+  </header>
 
-  <!-- Container that centers content and defines max-width -->
   <div class="container">
+    <section class="section">
+      <h2>About</h2>
+      <p>My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
+      <p>Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland.</p>
+      <p>Outside of my academic pursuits, I am a passionate watchmaking enthusiast, learning and practicing this craft during my leisure time. I am also passionate about space exploration, astronomy, and everything aerospace and aviation related.</p>
+    </section>
 
-    <!-- Header / Sidebar block -->
-    <aside class="sidebar">
-      <img class="profile-pic" src="res/Samuel_pp.jpeg" alt="Portrait of Samuel Chassot">
-      <h1 class="name">Samuel Chassot</h1>
-      <p class="role">PhD @ LARA, EPFL</p>
-      <p class="location">
-        <i class="fa fa-home"></i>
-        Lausanne, Switzerland
-      </p>
-      <p>
-        <a href="mailto:samuel.chassot@epfl.ch">
-          <i class="fa fa-envelope"></i>
-          samuel.chassot@epfl.ch
-        </a>
-      </p>
-      <p>
-        <a href="https://www.github.com/samuelchassot" target="_blank">
-          <i class="fa fa-github"></i>
-          github.com/samuelchassot
-        </a>
-      </p>
-      <p>
-        <a href="https://orcid.org/0009-0000-9751-9252" target="_blank">
-          <i class="fa-brands fa-orcid"></i>
-          0009-0000-9751-9252
-        </a>
-      </p>
-      <p>
-        <a href="https://scholar.google.com/citations?user=yL85RAUAAAAJ&hl=fr&oi=ao" target="_blank">
-          <i class="fa-brands fa-google-scholar"></i> Google Scholar
-        </a>
-      </p>
-    </aside>
+    <section class="section">
+      <h2>Research</h2>
+      <p>My current research focuses on software verification, particularly with <a href="https://github.com/epfl-lara/stainless">Stainless</a>, a verifier for a subset of Scala that uses SMT solvers to find counterexamples or prove validity.</p>
+      <p>My main goal with my thesis is to make software verification more accessible by:</p>
+      <ul>
+        <li>Developing a library of verified software or frameworks (e.g., data structures, a regex engine, etc.)</li>
+        <li>Contributing to tool development to simplify software verification</li>
+      </ul>
+      <p>My recent projects include:</p>
+      <ul>
+        <li><b>Verifying the LongMap of the Scala standard library</b>, a mutable hashtable based on open addressing. This work has been published at IJCAR24. This verification work led to the discovery of a bug in the standard library implementation. I proposed a fix that I fully formally verified, which has been accepted.</li>
+        <li>Implementing and verifying an implementation of <b>Regex matching with derivatives</b>. I then use this Regex engine to implement a <b>lexer</b> (or tokeniser) that is verified to be correct and invertible under certain conditions.</li>
+        <li>Verifying the correctness of the implementation of a <b>serialization protocol, ESN1</b>, in collaboration with the European Space Agency. This work will be published at VMCAI25.</li>
+      </ul>
+      <p>Part of my verification work is available on <a href="https://github.com/epfl-lara/bolts">Bolts</a>, a library of programs verified with Stainless.</p>
+      <p>Some of my past projects include:</p>
+      <ul>
+        <li>(Master thesis) <b>SVSHI</b>: Secure and Verified Smart Home Infrastructure. SVSHI formally verifies Python smart building apps for KNX devices and manages KNX communications. Specifically, SVSHI consists of a framework to develop and verify Python applications and a runtime system to manage a KNX infrastructure with these applications. The code is available on GitHub <a href="https://github.com/dslab-epfl/svshi">here</a>.</li>
+        <li>(<a href="res/pdfs/resource_interfaces_report.pdf">Report</a>) <b>Resource interfaces</b>: I explored the idea of resource interfaces for programs. The concept is analog to semantic interfaces that are widely used, but to express the resource usage of a program given its inputs instead of its behaviour. I particularly explore the application of such resource interfaces to serverless computing. I also built a prototype in Python to extract basic interfaces for simple programs. The experience gave me a better understanding of serverless computing and its applications, as well as some practical experience with commercial solutions like Amazon Lambda.</li>
+      </ul>
+    </section>
 
-    <!-- Main content -->
-    <main class="content">
-      <!-- About Section -->
-      <section class="section">
-        <h2>About</h2>
-        <p>
-          My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of
-          <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and
-          Software Verification.
-        </p>
-        <p>
-          Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland. 
-        </p>
-        <p>Outside of my academic pursuits, I am a passionate watchmaking enthusiast, learning and practicing this craft during my leisure time. 
-          I am also passionate about space exploration, astronomy, and everything aerospace and aviation related.
-        </p>
-      </section>
+    <section class="section">
+      <h2>Publications</h2>
+      <ul>
+        <li><b>[<a href="https://doi.org/10.1007/978-3-031-91121-7_7">6</a>]</b> Milovančević, D., Bucev, M., Wojnarowski, M., Chassot, S., Kunčak, V. (2025). <b>Formal Autograding in a Classroom.</b> In: <i>Vafeiadis, V. (eds) Programming Languages and Systems. ESOP 2025.</i> Lecture Notes in Computer Science, vol 15695. Springer, Cham.</li>
+        <li><b>[<a href="https://doi.org/10.1007/978-3-031-82703-7_9">5</a>]</b> Bucev, M., Chassot, S., Felix, S., Schramka, F., Kunčak, V. (2025). <b>Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study</b> In <i>Verification, Model Checking, and Abstract Interpretation</i> (pp. 185-207). Springer Nature Switzerland.</li>
+        <li><b>[<a href="https://doi.org/10.1007/978-3-031-63498-7_18">4</a>]</b> (<a href="res/pdfs/realistic_mutable_hashmap.pdf">pdf</a>) Chassot, S., Kunčak, V. (2024). <b>Verifying a Realistic Mutable Hash Table.</b> In: Benzmüller, C., Heule, M.J., Schmidt, R.A. (eds) Automated Reasoning. IJCAR 2024. Lecture Notes in Computer Science(), vol 14739. Springer</li>
+        <li><b>[<a href="https://doi.org/10.48550/arXiv.2206.11786">3</a>]</b> (<a href="res/pdfs/svshi_samuel_chassot_andrea_veneziano.pdf">pdf</a>) (Preprint) (Master Thesis) Andrea Veneziano, and Samuel Chassot. <b>"SVSHI: Secure and Verified Smart Home Infrastructure."</b> (2022).</li>
+        <li><b>[<a href="https://doi.org/10.48550/arXiv.2107.12833">2</a>]</b> (<a href="res/pdfs/nic_csharp_samuel_chassot.pdf">pdf</a>) (Preprint) Samuel Chassot. <b>"Development of a NIC driver in C#"</b> .CoRR abs/2107.12833 (2021).</li>
+        <li><b>[<a href="10.11648/j.ajcst.20210404.12">1</a>]</b> (<a href="res/pdfs/scaling_up_an_unsupervised_image-to-image_translation_framework_from_basic_to_complex_scenes.pdf">pdf</a>) Daniel Filipe Nunes Silva, Samuel Chassot, Luca Barras, Deblina Bhattacharjee, and Sabine Süsstrunk. <b>"Scaling up an Unsupervised Image-to-Image Translation Framework from Basic to Complex Scenes"</b>. American Journal of Computer Science and Technology 4, no.4 (2021): 97-105.</li>
+      </ul>
+    </section>
 
-      <!-- Research Section -->
-      <section class="section">
-        <h2>Research</h2>
-        <p>
-          My current research focuses on software verification, particularly with
-          <a href="https://github.com/epfl-lara/stainless">Stainless</a>, a verifier for a subset of Scala that uses
-          SMT solvers to find counterexamples or prove validity.
-        </p>
-        <p>
-          My main goal with my thesis is to make software verification more accessible by:
-          <ul>
-            <li>Developing a library of verified software or frameworks (e.g., data structures, a regex engine, etc.)</li>
-            <li>Contributing to tool development to simplify software verification</li>
-          </ul>
-        </p>
-        <p>My recent projects include:</p>
-        <ul>
-          <li><b>Verifying the LongMap of the Scala standard library</b>, a mutable hashtable based on open
-            addressing. This
-            work has been published at IJCAR24. This verification work led to the discovery of a bug in the standard 
-            library implementation. I proposed a fix that I fully formally verified, which has been accepted.</li>
-          <li>Implementing and verifying an implementation of <b>Regex matching with derivatives</b>. I then use this
-            Regex
-            engine to implement a <b>lexer</b> (or tokeniser) that is verified to be correct and invertible under 
-            certain conditions.</li>
-          <li>Verifying the correctness of the implementation of a <b>serialization protocol, ESN1</b>, in
-            collaboration with
-            the European Space Agency. This work will be published at VMCAI25.</li>
-        </ul>
+    <section class="section">
+      <h2>Talks</h2>
+      <ul>
+        <li>To Space and Back: Verified Serialisation (Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study), (VMCAI 2025) – <a href="res/pdfs/2025_VMCAI_ASN1-ACN_Talk.pdf">slides</a></li>
+        <li>Stainless Verifier and Composition in Verification. (LMF Seminar on Software Verification, 2024) – <a href="res/pdfs/2024_Stainless_Verifier_and_Composition_in_Verification.pdf">slides</a></li>
+        <li>Verifying a Realistic Mutable Hash Table (IJCAR 2024) – <a href="res/pdfs/LongMap-IJCAR24-talk.pdf">slides</a></li>
+      </ul>
+    </section>
 
-        <p>Part of my verification work is available on <a href="https://github.com/epfl-lara/bolts">Bolts</a>, a
-          library of programs verified with Stainless.</p>
+    <section class="section">
+      <h2>Miscellaneous Resources</h2>
+      <h3>Interesting SMT Queries</h3>
+      <p>This section contains interesting SMT queries I encountered in my projects. They can serve as benchmark.</p>
+      <ul>
+        <li><a href="res/smt-queries/cvc5-asn1jvm.scala-2899.smt2">[cvc5 slow query]</a> This query is generated by Stainless when verifying a "Bit Stream" implementation for the ASN.1 project mentioned above. It is interesting because it takes a particulary long time to solve: ~100 sec on my Macbook Pro, ~230 sec on our linux server. The smt2 file contains a comment header with options to pass to cvc5.</li>
+      </ul>
+    </section>
+  </div>
 
-          <p>Some of my past projects include:</p>
-
-        <ul>
-          <li>(Master thesis) <b>SVSHI</b>: Secure and Verified Smart Home Infrastructure. SVSHI formally verifies
-            Python smart building apps for KNX devices and manages KNX communications. Specifically, SVSHI consists of
-            a framework to develop and verify Python applications and a runtime system to manage a KNX infrastructure
-            with these applications. The code is available on GitHub <a
-              href="https://github.com/dslab-epfl/svshi">here</a>.</li>
-          <li>(<a href="res/pdfs/resource_interfaces_report.pdf">Report</a>) <b>Resource interfaces</b>: I explored the idea
-            of resource interfaces for programs. The concept is
-            analog to semantic interfaces that are widely used, but to express the resource usage of a program given
-            its inputs instead of its behaviour. I particularly explore the application of such resource interfaces to
-            serverless computing. I also built a prototype in Python to extract basic interfaces for simple programs.
-            The experience gave me a better understanding of serverless computing and its applications, as well as
-            some practical experience with commercial solutions like Amazon Lambda.
-          </li>
-        </ul>
-      </section>
-
-      <!-- Publications Section -->
-      <section class="section">
-        <h2>Publications</h2>
-        <ul>
-          <li>
-            <b>[<a href="https://doi.org/10.1007/978-3-031-82703-7_9">5</a>]</b> Bucev, M., Chassot, S., Felix, S., 
-            Schramka, F., Kunčak, V. (2025). <b>Formally Verifiable Generated ASN.1/ACN Encoders 
-              and Decoders: A Case Study</b> In <i>Verification, Model Checking, and Abstract Interpretation</i>
-               (pp. 185-207). Springer Nature Switzerland.
-          </li>
-          <li>
-            <b>[<a href="https://doi.org/10.1007/978-3-031-63498-7_18">4</a>]</b> (<a
-            href="res/pdfs/realistic_mutable_hashmap.pdf">pdf</a>) Chassot, S., Kunčak, V. (2024). <b>Verifying a
-              Realistic Mutable Hash Table.</b> In: Benzmüller, C., Heule,
-            M.J., Schmidt, R.A. (eds) Automated Reasoning. IJCAR 2024. Lecture Notes in Computer Science(), vol
-            14739. Springer
-          </li>
-          <li>
-            <b>[<a href="https://doi.org/10.48550/arXiv.2206.11786">3</a>]</b> (<a
-            href="res/pdfs/svshi_samuel_chassot_andrea_veneziano.pdf">pdf</a>) (Preprint) (Master Thesis) Andrea
-            Veneziano, and Samuel Chassot. <b>"SVSHI: Secure and Verified Smart Home Infrastructure."</b> (2022).
-          </li>
-          <li>
-            <b>[<a href="https://doi.org/10.48550/arXiv.2107.12833">2</a>]</b> (<a
-            href="res/pdfs/nic_csharp_samuel_chassot.pdf">pdf</a>) (Preprint) Samuel Chassot. <b>"Development of 
-              a NIC driver in C#"</b> .CoRR abs/2107.12833 (2021).
-          </li>
-          <li>
-            <b>[<a href="10.11648/j.ajcst.20210404.12">1</a>]</b> (<a
-            href="res/pdfs/scaling_up_an_unsupervised_image-to-image_translation_framework_from_basic_to_complex_scenes.pdf">pdf</a>)
-            Daniel Filipe Nunes Silva, Samuel Chassot, Luca Barras,
-            Deblina Bhattacharjee, and Sabine Süsstrunk. <b>"Scaling up an Unsupervised Image-to-Image Translation
-            Framework from Basic to Complex Scenes"</b>. American Journal of Computer Science and Technology 4, 
-            no.4 (2021): 97-105.
-          </li>
-        </ul>
-      </section>
-
-      <!-- Talks Section -->
-      <section class="section">
-        <h2>Talks</h2>
-        <ul>
-          <li>To Space and Back:Verified Serialisation 
-            (Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study),
-            (VMCAI 2025) – <a href="res/pdfs/2025_VMCAI_ASN1-ACN_Talk.pdf">slides</a></li>
-          <li>Stainless Verifier and Composition in Verification. (LMF Seminar on Software Verification, 2024) – <a href="res/pdfs/2024_Stainless_Verifier_and_Composition_in_Verification.pdf">slides</a></li>
-          <li>Verifying a Realistic Mutable Hash Table (IJCAR 2024) – <a href="res/pdfs/LongMap-IJCAR24-talk.pdf">slides</a></li>
-        </ul>
-      </section>
-
-      <!-- Miscellaneous Section -->
-      <section class="section">
-        <h2>Miscellaneous Resources</h2>
-        <h3>Interesting SMT Queries</h3>
-        <p>
-          This section contains interesting SMT queries I encountered in my projects. They can serve as benchmark.
-          <ul>
-            <li>
-              <a href="res/smt-queries/cvc5-asn1jvm.scala-2899.smt2">[cvc5 slow query]</a> This query is generated by
-              Stainless when verifying a "Bit Stream" implementation for the ASN.1 project mentio§ned above. It is
-              interesting because it takes a particulary long time to solve: ~100 sec on my Macbook Pro, ~230 sec on our
-              linux server. The smt2 file contains a comment header with options to pass to cvc5.
-            </li>
-          </ul>
-        </p>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <p>&copy; 2024 - Samuel Chassot</p>
-      </footer>
-    </main>
-  </div><!-- end .container -->
-
+  <footer>
+    &copy; 2024 Samuel Chassot
+  </footer>
 </body>
 </html>
