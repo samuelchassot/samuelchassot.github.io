@@ -380,6 +380,30 @@
       gap: 8px;
     }
 
+    /* --- Bolts callout --- */
+
+    .callout {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 18px;
+      margin-top: 20px;
+      padding: 16px 20px;
+      border: 1px solid rgba(11, 190, 196, 0.28);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, rgba(11, 190, 196, 0.10), rgba(59, 130, 246, 0.06));
+    }
+
+    .callout p {
+      flex: 1 1 320px;
+      margin: 0;
+    }
+
+    .callout .link-pill {
+      padding: 8px 16px;
+      font-size: 0.88rem;
+    }
+
     /* --- Publication cards --- */
 
     .pub-list {
@@ -394,6 +418,12 @@
       border-radius: var(--radius-md);
       background: rgba(255,255,255,0.72);
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      scroll-margin-top: 96px;
+    }
+
+    .pub-card:target {
+      border-color: rgba(11, 190, 196, 0.45);
+      background: rgba(11, 190, 196, 0.06);
     }
 
     .pub-title {
@@ -690,13 +720,25 @@
             <li>Contributing to tool development to simplify software verification</li>
           </ul>
 
+          <div class="callout">
+            <p>Much of my verification work is open source in <a href="https://github.com/epfl-lara/bolts"><b>Bolts</b></a>, a library of verified data structures, algorithms, and programs proven correct with Stainless.</p>
+            <a class="link-pill" href="https://github.com/epfl-lara/bolts" target="_blank">
+              <span class="icon" style="width: 16px; height: 16px;">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.426 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.008-.866-.013-1.699-2.782.605-3.369-1.343-3.369-1.343-.455-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.349-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.748 0 .268.18.58.688.481A10.019 10.019 0 0 0 22 12.017C22 6.484 17.523 2 12 2z"/>
+                </svg>
+              </span>
+              Bolts on GitHub
+            </a>
+          </div>
+
           <h3 class="subheading">Recent projects</h3>
           <div class="card-grid">
             <div class="project-card">
               <h4>Verifying the Scala standard library's LongMap</h4>
               <p>Full verification of a mutable, open-addressing hashtable from the Scala standard library. The proof uncovered a bug in the original implementation; my formally verified fix was accepted upstream. Published at IJCAR 2024.</p>
               <div class="card-links">
-                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">Paper</a>
+                <a class="link-pill" href="#pub-hashmap">Paper</a>
               </div>
             </div>
             <div class="project-card">
@@ -707,12 +749,10 @@
               <h4>Verified ASN.1 serialization, with ESA</h4>
               <p>Verification of an ASN.1/ACN serialization protocol implementation, in collaboration with the European Space Agency. Published at VMCAI 2025.</p>
               <div class="card-links">
-                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">Paper</a>
+                <a class="link-pill" href="#pub-asn1">Paper</a>
               </div>
             </div>
           </div>
-
-          <p style="margin-top: 20px;">Part of my verification work is available on <a href="https://github.com/epfl-lara/bolts">Bolts</a>, a library of programs verified with Stainless.</p>
 
           <h3 class="subheading">Earlier projects</h3>
           <div class="card-grid">
@@ -739,6 +779,15 @@
           <h2>Publications</h2>
           <ul class="pub-list">
             <li class="pub-card">
+              <div class="pub-title"><a href="https://doi.org/10.1145/3828727" target="_blank">Formal Autograding in a Classroom (Extended Version)</a></div>
+              <div class="pub-authors">Milovančević, D., <span class="me">Chassot, S.</span>, Bucev, M., Wojnarowski, M., Kunčak, V.</div>
+              <div class="pub-meta">
+                <span class="venue-pill">TOPLAS</span>
+                <span class="pub-venue">ACM Transactions on Programming Languages and Systems, 2026</span>
+                <a class="link-pill" href="https://doi.org/10.1145/3828727" target="_blank">DOI</a>
+              </div>
+            </li>
+            <li class="pub-card">
               <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">Formal Autograding in a Classroom</a></div>
               <div class="pub-authors">Milovančević, D., Bucev, M., Wojnarowski, M., <span class="me">Chassot, S.</span>, Kunčak, V.</div>
               <div class="pub-meta">
@@ -747,7 +796,7 @@
                 <a class="link-pill" href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">DOI</a>
               </div>
             </li>
-            <li class="pub-card">
+            <li class="pub-card" id="pub-asn1">
               <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study</a></div>
               <div class="pub-authors">Bucev, M., <span class="me">Chassot, S.</span>, Felix, S., Schramka, F., Kunčak, V.</div>
               <div class="pub-meta">
@@ -756,7 +805,7 @@
                 <a class="link-pill" href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">DOI</a>
               </div>
             </li>
-            <li class="pub-card">
+            <li class="pub-card" id="pub-hashmap">
               <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">Verifying a Realistic Mutable Hash Table</a></div>
               <div class="pub-authors"><span class="me">Chassot, S.</span>, Kunčak, V.</div>
               <div class="pub-meta">
@@ -805,6 +854,14 @@
           <div class="section-inner">
             <h2>Talks</h2>
             <ul class="talk-list">
+              <li class="talk-card">
+                <div class="talk-main">
+                  <div class="talk-title">Refinement Types in Scala with Stainless</div>
+                  <div class="talk-venue">With Katarzyna Marek and Matt Bovel — Scala Workshop 2026</div>
+                </div>
+                <a class="link-pill" href="https://2026.workshop.scala-lang.org/details/scala-2026/7/Refinement-Types-in-Scala-with-Stainless" target="_blank">Details</a>
+                <a class="link-pill" href="res/pdfs/2026-Scala-Workshop-Refinement-types-for-stainless" target="_blank">Slides</a>
+              </li>
               <li class="talk-card">
                 <div class="talk-main">
                   <div class="talk-title">Mutable Cells for Memoized Lexing</div>
