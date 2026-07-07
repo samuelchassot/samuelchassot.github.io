@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samuel Chassot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --tile: #f5f6f8;
+      --border: rgba(15, 23, 42, 0.10);
+      --border-soft: rgba(15, 23, 42, 0.07);
+      --text: #14181f;
+      --muted: #5c6675;
+      --primary: #0bbec4;
+      --primary-dark: #0c8f94;
+      --radius-md: 14px;
+      --radius-sm: 8px;
+      --max-width: 1060px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      font-size: 16px;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page-shell {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 18px 0 16px;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      flex: 0 0 auto;
+    }
+
+    .brand span {
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+      background: var(--tile);
+      text-decoration: none;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 232px 1fr;
+      gap: 48px;
+      align-items: center;
+      padding: 64px 0 48px;
+    }
+
+    .portrait-wrap {
+      width: 100%;
+      max-width: 232px;
+    }
+
+    .portrait-wrap img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+
+    .kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4.5vw, 3.7rem);
+      line-height: 1.05;
+      letter-spacing: -0.035em;
+      margin-bottom: 14px;
+    }
+
+    .hero p.role {
+      font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+      color: var(--muted);
+      margin-bottom: 10px;
+      max-width: 60ch;
+    }
+
+    .hero p.role a {
+      font-weight: 600;
+    }
+
+    .hero p.tagline {
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 26px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.94rem;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .contact-chip:hover {
+      text-decoration: none;
+      background: var(--tile);
+      border-color: rgba(15, 23, 42, 0.18);
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-dark);
+      flex: 0 0 auto;
+    }
+
+    .icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .section {
+      border-top: 1px solid var(--border-soft);
+      padding: 48px 0;
+      scroll-margin-top: 72px;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 22px;
+    }
+
+    .section p {
+      max-width: 74ch;
+    }
+
+    .section p + p,
+    .section p + ul,
+    .section ul + p {
+      margin-top: 14px;
+    }
+
+    .section ul.plain-list {
+      padding-left: 1.25rem;
+      max-width: 74ch;
+    }
+
+    .section .plain-list li + li {
+      margin-top: 0.5rem;
+    }
+
+    h3.subheading {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin: 34px 0 16px;
+    }
+
+    /* --- Project cards --- */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      background: var(--tile);
+    }
+
+    .project-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+
+    .project-card p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-card .card-links {
+      margin-top: auto;
+      padding-top: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* --- Thesis mission --- */
+
+    .mission {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      max-width: 60ch;
+    }
+
+    .mission .accent {
+      color: var(--primary-dark);
+    }
+
+    .goal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .goal-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px 22px;
+      border-radius: var(--radius-md);
+      background: var(--tile);
+    }
+
+    .goal-icon {
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      background: rgba(11, 190, 196, 0.12);
+      color: var(--primary-dark);
+    }
+
+    .goal-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .goal-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+
+    .goal-card p {
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    /* --- Bolts callout --- */
+
+    .callout {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 18px;
+      margin-top: 20px;
+      padding: 16px 20px;
+      border-left: 3px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      background: rgba(11, 190, 196, 0.07);
+    }
+
+    .callout p {
+      flex: 1 1 320px;
+      margin: 0;
+    }
+
+    .callout .link-pill {
+      padding: 8px 15px;
+      font-size: 0.88rem;
+    }
+
+    /* --- Publications --- */
+
+    .pub-list {
+      list-style: none;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .pub-card {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-soft);
+      scroll-margin-top: 84px;
+    }
+
+    .pub-card:target {
+      background: linear-gradient(90deg, rgba(11, 190, 196, 0.08), transparent 85%);
+      box-shadow: inset 3px 0 0 var(--primary);
+      padding-left: 16px;
+    }
+
+    .pub-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.45;
+    }
+
+    .pub-title a {
+      color: var(--text);
+    }
+
+    .pub-title a:hover {
+      color: var(--primary-dark);
+    }
+
+    .pub-authors {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .pub-authors .me {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .venue-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: rgba(11, 190, 196, 0.12);
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .venue-pill.neutral {
+      background: rgba(15, 23, 42, 0.06);
+      color: var(--muted);
+    }
+
+    .pub-venue {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .link-pill:hover {
+      text-decoration: none;
+      background: var(--tile);
+      border-color: rgba(15, 23, 42, 0.18);
+    }
+
+    /* --- Talks --- */
+
+    .talk-list {
+      list-style: none;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .talk-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .talk-main {
+      flex: 1 1 300px;
+    }
+
+    .talk-title {
+      font-weight: 700;
+      font-size: 0.98rem;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .talk-venue {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .duo-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .duo-grid .section {
+      padding-bottom: 0;
+    }
+
+    .footer {
+      border-top: 1px solid var(--border-soft);
+      margin-top: 48px;
+      text-align: center;
+      color: var(--muted);
+      padding: 28px 0 32px;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 1080px) {
+      .duo-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .duo-grid .section + .section {
+        margin-top: 48px;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 40px 0 36px;
+      }
+
+      .portrait-wrap {
+        max-width: 190px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page-shell {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .section {
+        padding: 36px 0;
+      }
+
+      .contact-row {
+        flex-direction: column;
+      }
+
+      .contact-chip {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="topbar">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span>Samuel Chassot</span>
+      </div>
+      <nav class="nav" aria-label="Section navigation">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#talks">Talks</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+
+    <header class="hero">
+      <div class="portrait-wrap">
+        <img src="res/Samuel_pp.jpeg" alt="Portrait of Samuel Chassot">
+      </div>
+
+      <div class="hero-content">
+        <p class="kicker">Formal Verification · Programming Languages · Scala / Stainless</p>
+        <h1>Samuel Chassot</h1>
+        <p class="role">PhD candidate at <a href="https://lara.epfl.ch/">LARA</a>, EPFL, advised by <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a></p>
+        <p class="tagline">I work on making software verification practical and accessible — building verified libraries and improving the tools used to prove real-world code correct.</p>
+
+        <div class="contact-row">
+          <a class="contact-chip" href="mailto:samuel.chassot@epfl.ch" aria-label="Email Samuel Chassot">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </span>
+            <span>Email</span>
+          </a>
+
+          <a class="contact-chip" href="https://github.com/samuelchassot" target="_blank" aria-label="GitHub profile">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.426 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.008-.866-.013-1.699-2.782.605-3.369-1.343-3.369-1.343-.455-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.349-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.748 0 .268.18.58.688.481A10.019 10.019 0 0 0 22 12.017C22 6.484 17.523 2 12 2z"/>
+              </svg>
+            </span>
+            <span>GitHub</span>
+          </a>
+
+          <a class="contact-chip" href="https://orcid.org/0009-0000-9751-9252" target="_blank" aria-label="ORCID profile">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2Zm-4.06 5.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Zm1.04 10.12H7.02V10.4h1.96v6.92Zm7.87-3.5c0 2.06-1.33 3.5-3.68 3.5h-3.03V10.4h2.98c2.42 0 3.73 1.43 3.73 3.42Zm-3.82-1.69h-0.95v3.44h0.95c1.32 0 1.83-.68 1.83-1.75 0-1.04-.52-1.69-1.83-1.69Z"/>
+              </svg>
+            </span>
+            <span>ORCID</span>
+          </a>
+
+          <a class="contact-chip" href="https://scholar.google.com/citations?user=yL85RAUAAAAJ&amp;hl=fr&amp;oi=ao" target="_blank" aria-label="Google Scholar profile">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3Zm0 13L5.5 12.45V16c0 2.76 2.91 5 6.5 5s6.5-2.24 6.5-5v-3.55L12 16Z"/>
+              </svg>
+            </span>
+            <span>Scholar</span>
+          </a>
+
+          <a class="contact-chip" href="res/pdfs/CV_Samuel_Chassot.pdf" target="_blank" aria-label="Curriculum vitae (PDF)">
+            <span class="icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"></path>
+                <path d="M14 3v5h5"></path>
+                <path d="M9 13h6M9 17h6"></path>
+              </svg>
+            </span>
+            <span>CV</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="about">
+        <h2>About</h2>
+        <p>My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
+        <p>Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland.</p>
+        <p>Outside of my academic pursuits, I am a passionate watchmaking enthusiast, learning and practicing this craft during my leisure time. I am also passionate about space exploration, astronomy, and everything aerospace and aviation related.</p>
+      </section>
+
+      <section class="section" id="research">
+        <h2>Research</h2>
+        <p>My current research focuses on software verification, particularly with <a href="https://github.com/epfl-lara/stainless">Stainless</a>, a verifier for a subset of Scala that uses SMT solvers to find counterexamples or prove validity.</p>
+        <p class="mission">My thesis, in one line: make software verification <span class="accent">accessible</span>.</p>
+        <div class="goal-grid">
+          <div class="goal-card">
+            <div class="goal-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6l7-3z"></path>
+                <path d="m9.2 12.2 2 2 3.6-4.4"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>Build verified software</h4>
+              <p>A growing library of verified data structures, regex engines, and frameworks — proven correct, not just tested.</p>
+            </div>
+          </div>
+          <div class="goal-card">
+            <div class="goal-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+              </svg>
+            </div>
+            <div>
+              <h4>Build better tools</h4>
+              <p>Improving verifiers like Stainless so that proving real-world code correct takes less expert effort.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <p>Much of my verification work is open source in <a href="https://github.com/epfl-lara/bolts"><b>Bolts</b></a>, a library of verified data structures, algorithms, and programs proven correct with Stainless.</p>
+          <a class="link-pill" href="https://github.com/epfl-lara/bolts" target="_blank">
+            <span class="icon" style="width: 16px; height: 16px;">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.426 2.865 8.18 6.839 9.504.5.093.682-.217.682-.483 0-.237-.008-.866-.013-1.699-2.782.605-3.369-1.343-3.369-1.343-.455-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.091-.647.349-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.378.203 2.397.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.748 0 .268.18.58.688.481A10.019 10.019 0 0 0 22 12.017C22 6.484 17.523 2 12 2z"/>
+              </svg>
+            </span>
+            Bolts on GitHub
+          </a>
+        </div>
+
+        <h3 class="subheading">Recent projects</h3>
+        <div class="card-grid">
+          <div class="project-card">
+            <h4>Verifying the Scala standard library's LongMap</h4>
+            <p>Full verification of a mutable, open-addressing hashtable from the Scala standard library. The proof uncovered a bug in the original implementation; my formally verified fix was accepted upstream. Published at IJCAR 2024.</p>
+            <div class="card-links">
+              <a class="link-pill" href="#pub-hashmap">Paper</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <h4>Verified regex matching &amp; invertible lexing</h4>
+            <p>An implementation of regex matching with derivatives, verified in Stainless, used to build a lexer proven correct: it follows longest-match semantics and is invertible.</p>
+          </div>
+          <div class="project-card">
+            <h4>Verified ASN.1 serialization, with ESA</h4>
+            <p>Verification of an ASN.1/ACN serialization protocol implementation, in collaboration with the European Space Agency. Published at VMCAI 2025.</p>
+            <div class="card-links">
+              <a class="link-pill" href="#pub-asn1">Paper</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="subheading">Earlier projects</h3>
+        <div class="card-grid">
+          <div class="project-card">
+            <h4>SVSHI — Secure and Verified Smart Home Infrastructure</h4>
+            <p>My master thesis. SVSHI formally verifies Python smart building apps for KNX devices and manages KNX communications: a framework to develop and verify applications, plus a runtime system to run them on a KNX infrastructure.</p>
+            <div class="card-links">
+              <a class="link-pill" href="https://github.com/dslab-epfl/svshi" target="_blank">GitHub</a>
+            </div>
+          </div>
+          <div class="project-card">
+            <h4>Resource interfaces</h4>
+            <p>An exploration of resource interfaces for programs — analogous to semantic interfaces, but expressing resource usage as a function of inputs — with a focus on serverless computing and a Python prototype extracting basic interfaces for simple programs.</p>
+            <div class="card-links">
+              <a class="link-pill" href="res/pdfs/resource_interfaces_report.pdf" target="_blank">Report</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="publications">
+        <h2>Publications</h2>
+        <ul class="pub-list">
+          <li class="pub-card">
+            <div class="pub-title"><a href="https://doi.org/10.1145/3828727" target="_blank">Formal Autograding in a Classroom (Extended Version)</a></div>
+            <div class="pub-authors">Milovančević, D., <span class="me">Chassot, S.</span>, Bucev, M., Wojnarowski, M., Kunčak, V.</div>
+            <div class="pub-meta">
+              <span class="venue-pill">TOPLAS</span>
+              <span class="pub-venue">ACM Transactions on Programming Languages and Systems, 2026</span>
+              <a class="link-pill" href="https://doi.org/10.1145/3828727" target="_blank">DOI</a>
+            </div>
+          </li>
+          <li class="pub-card">
+            <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">Formal Autograding in a Classroom</a></div>
+            <div class="pub-authors">Milovančević, D., Bucev, M., Wojnarowski, M., <span class="me">Chassot, S.</span>, Kunčak, V.</div>
+            <div class="pub-meta">
+              <span class="venue-pill">ESOP 2025</span>
+              <span class="pub-venue">Programming Languages and Systems, LNCS vol. 15695, Springer</span>
+              <a class="link-pill" href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">DOI</a>
+            </div>
+          </li>
+          <li class="pub-card" id="pub-asn1">
+            <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study</a></div>
+            <div class="pub-authors">Bucev, M., <span class="me">Chassot, S.</span>, Felix, S., Schramka, F., Kunčak, V.</div>
+            <div class="pub-meta">
+              <span class="venue-pill">VMCAI 2025</span>
+              <span class="pub-venue">Verification, Model Checking, and Abstract Interpretation, pp. 185–207, Springer Nature Switzerland</span>
+              <a class="link-pill" href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">DOI</a>
+            </div>
+          </li>
+          <li class="pub-card" id="pub-hashmap">
+            <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">Verifying a Realistic Mutable Hash Table</a></div>
+            <div class="pub-authors"><span class="me">Chassot, S.</span>, Kunčak, V.</div>
+            <div class="pub-meta">
+              <span class="venue-pill">IJCAR 2024</span>
+              <span class="pub-venue">Automated Reasoning, LNCS vol. 14739, Springer</span>
+              <a class="link-pill" href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">DOI</a>
+              <a class="link-pill" href="res/pdfs/realistic_mutable_hashmap.pdf" target="_blank">PDF</a>
+            </div>
+          </li>
+          <li class="pub-card">
+            <div class="pub-title"><a href="https://doi.org/10.48550/arXiv.2206.11786" target="_blank">SVSHI: Secure and Verified Smart Home Infrastructure</a></div>
+            <div class="pub-authors">Veneziano, A., <span class="me">Chassot, S.</span></div>
+            <div class="pub-meta">
+              <span class="venue-pill neutral">Preprint · Master Thesis</span>
+              <span class="pub-venue">2022</span>
+              <a class="link-pill" href="https://doi.org/10.48550/arXiv.2206.11786" target="_blank">DOI</a>
+              <a class="link-pill" href="res/pdfs/svshi_samuel_chassot_andrea_veneziano.pdf" target="_blank">PDF</a>
+            </div>
+          </li>
+          <li class="pub-card">
+            <div class="pub-title"><a href="https://doi.org/10.48550/arXiv.2107.12833" target="_blank">Development of a NIC Driver in C#</a></div>
+            <div class="pub-authors"><span class="me">Chassot, S.</span></div>
+            <div class="pub-meta">
+              <span class="venue-pill neutral">Preprint</span>
+              <span class="pub-venue">CoRR abs/2107.12833, 2021</span>
+              <a class="link-pill" href="https://doi.org/10.48550/arXiv.2107.12833" target="_blank">DOI</a>
+              <a class="link-pill" href="res/pdfs/nic_csharp_samuel_chassot.pdf" target="_blank">PDF</a>
+            </div>
+          </li>
+          <li class="pub-card">
+            <div class="pub-title"><a href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">Scaling up an Unsupervised Image-to-Image Translation Framework from Basic to Complex Scenes</a></div>
+            <div class="pub-authors">Nunes Silva, D. F., <span class="me">Chassot, S.</span>, Barras, L., Bhattacharjee, D., Süsstrunk, S.</div>
+            <div class="pub-meta">
+              <span class="venue-pill">AJCST</span>
+              <span class="pub-venue">American Journal of Computer Science and Technology 4(4), pp. 97–105, 2021</span>
+              <a class="link-pill" href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">DOI</a>
+              <a class="link-pill" href="res/pdfs/scaling_up_an_unsupervised_image-to-image_translation_framework_from_basic_to_complex_scenes.pdf" target="_blank">PDF</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <div class="duo-grid">
+        <section class="section" id="talks">
+          <h2>Talks</h2>
+          <ul class="talk-list">
+            <li class="talk-card">
+              <div class="talk-main">
+                <div class="talk-title">Refinement Types in Scala with Stainless</div>
+                <div class="talk-venue">With Katarzyna Marek and Matt Bovel — Scala Workshop 2026</div>
+              </div>
+              <a class="link-pill" href="https://2026.workshop.scala-lang.org/details/scala-2026/7/Refinement-Types-in-Scala-with-Stainless" target="_blank">Details</a>
+              <a class="link-pill" href="res/pdfs/2026-Scala-Workshop-Refinement-types-for-stainless.pdf" target="_blank">Slides</a>
+            </li>
+            <li class="talk-card">
+              <div class="talk-main">
+                <div class="talk-title">Mutable Cells for Memoized Lexing</div>
+                <div class="talk-venue">Verified memoization framework for verified invertible lexing — invited talk, VIMPL 2026</div>
+              </div>
+              <a class="link-pill" href="res/pdfs/2026_VIMPL_memoized_lexer.pdf" target="_blank">Slides</a>
+            </li>
+            <li class="talk-card">
+              <div class="talk-main">
+                <div class="talk-title">To Space and Back: Verified Serialisation</div>
+                <div class="talk-venue">Formally verifiable generated ASN.1/ACN encoders and decoders — VMCAI 2025</div>
+              </div>
+              <a class="link-pill" href="res/pdfs/2025_VMCAI_ASN1-ACN_Talk.pdf" target="_blank">Slides</a>
+            </li>
+            <li class="talk-card">
+              <div class="talk-main">
+                <div class="talk-title">Stainless Verifier and Composition in Verification</div>
+                <div class="talk-venue">LMF Seminar on Software Verification, 2024</div>
+              </div>
+              <a class="link-pill" href="res/pdfs/2024_Stainless_Verifier_and_Composition_in_Verification.pdf" target="_blank">Slides</a>
+            </li>
+            <li class="talk-card">
+              <div class="talk-main">
+                <div class="talk-title">Verifying a Realistic Mutable Hash Table</div>
+                <div class="talk-venue">IJCAR 2024</div>
+              </div>
+              <a class="link-pill" href="res/pdfs/LongMap-IJCAR24-talk.pdf" target="_blank">Slides</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="section" id="resources">
+          <h2>Miscellaneous Resources</h2>
+          <h3 class="subheading" style="margin-top: 0;">Interesting SMT queries</h3>
+          <p>Interesting SMT queries I encountered in my projects. They can serve as benchmarks.</p>
+          <div class="card-grid" style="margin-top: 14px;">
+            <div class="project-card">
+              <h4>A slow cvc5 query</h4>
+              <p>Generated by Stainless when verifying a "Bit Stream" implementation for the <a href="#pub-asn1">ASN.1 project</a>. It takes a particularly long time to solve: ~100&nbsp;s on my MacBook Pro, ~230&nbsp;s on our Linux server. The smt2 file contains a comment header with options to pass to cvc5.</p>
+              <div class="card-links">
+                <a class="link-pill" href="res/smt-queries/cvc5-asn1jvm.scala-2899.smt2" download>smt2 file</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      &copy; 2026 Samuel Chassot
+    </footer>
+  </div>
+</body>
+</html>
