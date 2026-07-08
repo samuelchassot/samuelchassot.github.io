@@ -831,8 +831,11 @@
               </div>
             </div>
             <div class="project-card">
-              <h4>Verified regex matching &amp; invertible lexing</h4>
-              <p>An implementation of regex matching with derivatives, verified in Stainless, used to build a lexer proven correct: it follows longest-match semantics and is invertible.</p>
+              <h4>Ziplex: Verified regex matching &amp; linear-time invertible lexing</h4>
+              <p>A linear-time invertible lexer verified in Stainless, built on top of a verified regex matcher using Brzozowski derivatives. The lexer follows longest-match semantics and is invertible with respect to printing. The project includes verified performance optimizations to achieve linear-time complexity including: a verified and resuable memoization framework based on my previous work on verified mutable hash tables; the memoization of critical functions using said framework; a zipper-based implementation for efficient regular expressionderivative computation and memoization.</p>
+              <div class="card-links">
+                <a class="link-pill" href="#pub-ziplex">Paper</a>
+              </div>
             </div>
             <div class="project-card">
               <h4>Verified ASN.1 serialization, with ESA</h4>
