@@ -369,6 +369,60 @@
       background: var(--border);
     }
 
+    /* --- About --- */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .aside-card {
+      padding: 20px 22px;
+      border: 1px solid rgba(15, 23, 42, 0.07);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.72);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+    }
+
+    .aside-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .interest-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .interest-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.93rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .interest-list i {
+      color: var(--primary-dark);
+      font-size: 15px;
+      width: 18px;
+      text-align: center;
+      margin-top: 5px;
+      flex: 0 0 auto;
+    }
+
+    @media (max-width: 860px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* --- Project cards --- */
 
     .card-grid {
@@ -788,9 +842,20 @@
       <section class="section" id="about">
         <div class="section-inner">
           <h2>About</h2>
-          <p>My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
-          <p>Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland.</p>
-          <p>Outside of my academic pursuits, I am a passionate watchmaking enthusiast, learning and practicing this craft during my leisure time. I am also passionate about space exploration, astronomy, and everything aerospace and aviation related.</p>
+          <div class="about-grid">
+            <div>
+              <p>My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
+              <p>Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland.</p>
+            </div>
+            <div class="aside-card">
+              <h4>Beyond research</h4>
+              <ul class="interest-list">
+                <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Watchmaking — learning and practicing the craft in my free time</span></li>
+                <li><i class="fa-solid fa-rocket" aria-hidden="true"></i><span>Space exploration and astronomy</span></li>
+                <li><i class="fa-solid fa-plane" aria-hidden="true"></i><span>All things aerospace and aviation</span></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
