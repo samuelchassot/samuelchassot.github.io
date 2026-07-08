@@ -539,6 +539,12 @@
       color: var(--muted);
     }
 
+    .venue-pill.year {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+    }
+
     .pub-venue {
       font-size: 0.85rem;
       color: var(--muted);
@@ -860,74 +866,10 @@
       <section class="section" id="publications">
         <div class="section-inner">
           <h2>Publications</h2>
-          <ul class="pub-list">
-            <li class="pub-card">
-              <div class="pub-title"><a href="https://doi.org/10.1145/3828727" target="_blank">Formal Autograding in a Classroom (Extended Version)</a></div>
-              <div class="pub-authors">Milovančević, D., <span class="me">Chassot, S.</span>, Bucev, M., Wojnarowski, M., Kunčak, V.</div>
-              <div class="pub-meta">
-                <span class="venue-pill">TOPLAS</span>
-                <span class="pub-venue">ACM Transactions on Programming Languages and Systems, 2026</span>
-                <a class="link-pill" href="https://doi.org/10.1145/3828727" target="_blank">DOI</a>
-              </div>
-            </li>
-            <li class="pub-card">
-              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">Formal Autograding in a Classroom</a></div>
-              <div class="pub-authors">Milovančević, D., Bucev, M., Wojnarowski, M., <span class="me">Chassot, S.</span>, Kunčak, V.</div>
-              <div class="pub-meta">
-                <span class="venue-pill">ESOP 2025</span>
-                <span class="pub-venue">Programming Languages and Systems, LNCS vol. 15695, Springer</span>
-                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">DOI</a>
-              </div>
-            </li>
-            <li class="pub-card" id="pub-asn1">
-              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study</a></div>
-              <div class="pub-authors">Bucev, M., <span class="me">Chassot, S.</span>, Felix, S., Schramka, F., Kunčak, V.</div>
-              <div class="pub-meta">
-                <span class="venue-pill">VMCAI 2025</span>
-                <span class="pub-venue">Verification, Model Checking, and Abstract Interpretation, pp. 185–207, Springer Nature Switzerland</span>
-                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">DOI</a>
-              </div>
-            </li>
-            <li class="pub-card" id="pub-hashmap">
-              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">Verifying a Realistic Mutable Hash Table</a></div>
-              <div class="pub-authors"><span class="me">Chassot, S.</span>, Kunčak, V.</div>
-              <div class="pub-meta">
-                <span class="venue-pill">IJCAR 2024</span>
-                <span class="pub-venue">Automated Reasoning, LNCS vol. 14739, Springer</span>
-                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">DOI</a>
-                <a class="link-pill" href="res/pdfs/realistic_mutable_hashmap.pdf" target="_blank">PDF</a>
-              </div>
-            </li>
-            <li class="pub-card">
-              <div class="pub-title"><a href="https://doi.org/10.48550/arXiv.2206.11786" target="_blank">SVSHI: Secure and Verified Smart Home Infrastructure</a></div>
-              <div class="pub-authors">Veneziano, A., <span class="me">Chassot, S.</span></div>
-              <div class="pub-meta">
-                <span class="venue-pill neutral">Preprint · Master Thesis</span>
-                <span class="pub-venue">2022</span>
-                <a class="link-pill" href="https://doi.org/10.48550/arXiv.2206.11786" target="_blank">DOI</a>
-                <a class="link-pill" href="res/pdfs/svshi_samuel_chassot_andrea_veneziano.pdf" target="_blank">PDF</a>
-              </div>
-            </li>
-            <li class="pub-card">
-              <div class="pub-title"><a href="https://doi.org/10.48550/arXiv.2107.12833" target="_blank">Development of a NIC Driver in C#</a></div>
-              <div class="pub-authors"><span class="me">Chassot, S.</span></div>
-              <div class="pub-meta">
-                <span class="venue-pill neutral">Preprint</span>
-                <span class="pub-venue">CoRR abs/2107.12833, 2021</span>
-                <a class="link-pill" href="https://doi.org/10.48550/arXiv.2107.12833" target="_blank">DOI</a>
-                <a class="link-pill" href="res/pdfs/nic_csharp_samuel_chassot.pdf" target="_blank">PDF</a>
-              </div>
-            </li>
-            <li class="pub-card">
-              <div class="pub-title"><a href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">Scaling up an Unsupervised Image-to-Image Translation Framework from Basic to Complex Scenes</a></div>
-              <div class="pub-authors">Nunes Silva, D. F., <span class="me">Chassot, S.</span>, Barras, L., Bhattacharjee, D., Süsstrunk, S.</div>
-              <div class="pub-meta">
-                <span class="venue-pill">AJCST</span>
-                <span class="pub-venue">American Journal of Computer Science and Technology 4(4), pp. 97–105, 2021</span>
-                <a class="link-pill" href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">DOI</a>
-                <a class="link-pill" href="res/pdfs/scaling_up_an_unsupervised_image-to-image_translation_framework_from_basic_to_complex_scenes.pdf" target="_blank">PDF</a>
-              </div>
-            </li>
+          <ul class="pub-list" id="pub-list">
+            <noscript>
+              <li class="pub-card">JavaScript is disabled — the publication list is available as a <a href="res/publications.bib">BibTeX file</a>.</li>
+            </noscript>
           </ul>
         </div>
       </section>
@@ -1000,5 +942,201 @@
       &copy; 2026 Samuel Chassot
     </footer>
   </div>
+
+  <script>
+    (function () {
+      const BIB_URL = 'res/publications.bib';
+      const MY_LAST_NAME = 'Chassot';
+
+      // Display metadata comes from non-standard fields in the bib entries
+      // (ignored by BibTeX tools): venueshort (pill label), pdflocal (local
+      // PDF path), anchor (stable id used by "Paper" links in Research).
+
+      const COMBINING = {
+        '`': '̀', "'": '́', '^': '̂', '~': '̃',
+        '"': '̈', 'v': '̌', 'c': '̧', '=': '̄',
+        '.': '̇', 'u': '̆', 'H': '̋', 'k': '̨'
+      };
+
+      function latexToUnicode(s) {
+        const accent = (m, cmd, ch) => ch + (COMBINING[cmd] || '');
+        s = s.replace(/\{\\(["'`^~vcuHk=.])\s*\{?([a-zA-Z])\}?\}/g, accent);
+        s = s.replace(/\\(["'`^~vcuHk=.])\s*\{?([a-zA-Z])\}?/g, accent);
+        s = s.replace(/\\([&%#_])/g, '$1');
+        s = s.replace(/[{}]/g, '');
+        s = s.replace(/\s+/g, ' ').trim();
+        return s.normalize('NFC');
+      }
+
+      function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      }
+
+      function parseBib(text) {
+        // Strip line comments (%) outside of entries.
+        text = text.split('\n').filter(l => !/^\s*%/.test(l)).join('\n');
+        const entries = [];
+        let i = 0;
+        while ((i = text.indexOf('@', i)) !== -1) {
+          const braceStart = text.indexOf('{', i);
+          if (braceStart === -1) break;
+          const type = text.slice(i + 1, braceStart).trim().toLowerCase();
+          let depth = 1, j = braceStart + 1;
+          while (j < text.length && depth > 0) {
+            if (text[j] === '{') depth++;
+            else if (text[j] === '}') depth--;
+            j++;
+          }
+          const body = text.slice(braceStart + 1, j - 1);
+          const comma = body.indexOf(',');
+          const key = body.slice(0, comma).trim();
+          entries.push({ type, key, fields: parseFields(body.slice(comma + 1)) });
+          i = j;
+        }
+        return entries;
+      }
+
+      function parseFields(s) {
+        const fields = {};
+        let i = 0;
+        while (i < s.length) {
+          const eq = s.indexOf('=', i);
+          if (eq === -1) break;
+          const name = s.slice(i, eq).replace(/[\s,]/g, '').toLowerCase();
+          let j = eq + 1;
+          while (j < s.length && /\s/.test(s[j])) j++;
+          let value = '';
+          if (s[j] === '{') {
+            let depth = 1; j++;
+            const start = j;
+            while (j < s.length && depth > 0) {
+              if (s[j] === '{') depth++;
+              else if (s[j] === '}') depth--;
+              j++;
+            }
+            value = s.slice(start, j - 1);
+          } else if (s[j] === '"') {
+            j++;
+            const start = j;
+            let depth = 0;
+            while (j < s.length && !(s[j] === '"' && depth === 0)) {
+              if (s[j] === '{') depth++;
+              else if (s[j] === '}') depth--;
+              j++;
+            }
+            value = s.slice(start, j);
+            j++;
+          } else {
+            const start = j;
+            while (j < s.length && s[j] !== ',') j++;
+            value = s.slice(start, j).trim();
+          }
+          if (name) fields[name] = value;
+          while (j < s.length && (s[j] === ',' || /\s/.test(s[j]))) j++;
+          i = j;
+        }
+        return fields;
+      }
+
+      function formatAuthors(authorField) {
+        const people = latexToUnicode(authorField).split(/\s+and\s+/i);
+        return people.map(p => {
+          let last, firsts;
+          if (p.includes(',')) {
+            const parts = p.split(',');
+            last = parts[0].trim();
+            firsts = (parts[1] || '').trim();
+          } else {
+            const tokens = p.trim().split(/\s+/);
+            last = tokens.pop() || '';
+            firsts = tokens.join(' ');
+          }
+          const initials = firsts.split(/[\s.]+/).filter(Boolean)
+            .map(n => n[0].toUpperCase() + '.').join(' ');
+          const display = escapeHtml(last + (initials ? ', ' + initials : ''));
+          return last.includes(MY_LAST_NAME)
+            ? '<span class="me">' + display + '</span>'
+            : display;
+        }).join(', ');
+      }
+
+      function venueLine(f) {
+        const parts = [];
+        const pages = f.pages ? 'pp. ' + latexToUnicode(f.pages).replace(/\s*--?\s*/, '–') : '';
+        if (f.journal) {
+          let j = latexToUnicode(f.journal);
+          if (f.volume) j += ' ' + f.volume + (f.number ? '(' + f.number + ')' : '');
+          parts.push(j);
+          if (pages) parts.push(pages);
+        } else if (f.booktitle) {
+          parts.push(latexToUnicode(f.booktitle));
+          if (pages) parts.push(pages);
+          if (f.publisher) parts.push(latexToUnicode(f.publisher));
+        } else if (f.archiveprefix && f.eprint) {
+          parts.push(f.archiveprefix + ':' + f.eprint);
+        }
+        return parts.join(', ');
+      }
+
+      function render(entries) {
+        entries = entries
+          .map((e, idx) => ({ e, idx }))
+          .sort((a, b) => (parseInt(b.e.fields.year) || 0) - (parseInt(a.e.fields.year) || 0) || a.idx - b.idx)
+          .map(x => x.e);
+
+        return entries.map(e => {
+          const f = e.fields;
+          const pdfLocal = (f.pdflocal || '').trim();
+          const title = latexToUnicode(f.title || 'Untitled');
+          // Springer-style entries carry the DOI as the entry key.
+          const doi = (f.doi || (/^10\.\d{4,9}\/\S+$/.test(e.key) ? e.key : '')).trim();
+          const doiUrl = doi ? 'https://doi.org/' + doi : '';
+          const mainUrl = doiUrl || (f.url || '').trim() || pdfLocal;
+          const isArxiv = (f.archiveprefix || '').toLowerCase() === 'arxiv';
+
+          const pill = f.venueshort ? latexToUnicode(f.venueshort) : (isArxiv ? 'Preprint' : '');
+          const pillNeutral = isArxiv || e.type === 'misc';
+
+          const links = [];
+          if (doiUrl) links.push({ href: doiUrl, label: 'DOI' });
+          if (f.url && f.url.trim() !== doiUrl) {
+            const u = f.url.trim();
+            const label = u.includes('openreview.net') ? 'OpenReview'
+              : u.includes('arxiv.org') ? 'arXiv' : 'Link';
+            links.push({ href: u, label });
+          }
+          if (pdfLocal) links.push({ href: pdfLocal, label: 'PDF' });
+
+          const id = (f.anchor || '').trim() || 'pub-' + e.key.replace(/[^a-zA-Z0-9_-]+/g, '-');
+          const titleHtml = mainUrl
+            ? '<a href="' + escapeHtml(mainUrl) + '" target="_blank">' + escapeHtml(title) + '</a>'
+            : escapeHtml(title);
+
+          return '<li class="pub-card" id="' + escapeHtml(id) + '">'
+            + '<div class="pub-title">' + titleHtml + '</div>'
+            + '<div class="pub-authors">' + formatAuthors(f.author || '') + '</div>'
+            + '<div class="pub-meta">'
+            + (f.year ? '<span class="venue-pill year">' + escapeHtml(f.year) + '</span>' : '')
+            + (pill ? '<span class="venue-pill' + (pillNeutral ? ' neutral' : '') + '">' + escapeHtml(pill) + '</span>' : '')
+            + '<span class="pub-venue">' + escapeHtml(venueLine(f)) + '</span>'
+            + links.map(l => '<a class="link-pill" href="' + escapeHtml(l.href) + '" target="_blank">' + l.label + '</a>').join('')
+            + '</div></li>';
+        }).join('');
+      }
+
+      const list = document.getElementById('pub-list');
+      fetch(BIB_URL)
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(text => {
+          list.innerHTML = render(parseBib(text));
+          // Re-trigger :target highlight if the page loaded with a #pub- hash.
+          if (location.hash) location.replace(location.hash);
+        })
+        .catch(() => {
+          list.innerHTML = '<li class="pub-card">Could not load the publication list. It is available as a <a href="' + BIB_URL + '">BibTeX file</a>.</li>';
+        });
+    })();
+  </script>
 </body>
 </html>
