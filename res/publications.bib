@@ -1,16 +1,24 @@
 % 2026
-
-@inproceedings{chassot2026lexing,
-  title = {Formally Verified Linear-Time Invertible Lexing},
-  author = {Chassot, Samuel and Kun{\v{c}}ak, Viktor},
-  booktitle = {Computer Aided Verification},
-  year = {2026},
-  publisher = {Springer},
-  note = {To appear},
-  url = {https://conferences.i-cav.org/2026/accepted/},
+@InProceedings{10.1007/978-3-032-32526-6_7,
+  author="Chassot, Samuel
+  and Kun{\v{c}}ak, Viktor",
+  editor="Darulova, Eva
+  and Lin, Anthony W.
+  and R{\"u}mmer, Philipp",
+  title="Formally Verified Linear-Time Invertible Lexing",
+  booktitle="Computer Aided Verification",
+  year="2026",
+  publisher="Springer Nature Switzerland",
+  address="Cham",
+  pages="141--164",
+  abstract="We present ZipLex, a verified framework for invertible linear-time lexical analysis following the longest match (maximal munch) semantics. Unlike past verified lexers that focus only on satisfying the semantics of regular expressions and the longest match property, ZipLex also guarantees that lexing and printing are mutual inverses. Thanks to verified memoization, it also ensures that the lexical analysis of a string is linear in the size of the string. Our design and implementation rely on two sets of ideas: (1) a new abstraction of token sequences that captures the separability of tokens in a sequence while supporting their efficient manipulation, and (2) a combination of verified data structures and optimizations, including Huet's zippers and memoization with a standalone verified imperative hash table. Our hash table offers competitive performance as shown by our evaluation. We implemented and verified ZipLex using the Stainless deductive verifier for Scala. Our evaluation demonstrates that ZipLex supports realistic applications such as JSON processing and lexers of programming languages, and behaves linearly even in cases that make flex-style approaches quadratic. ZipLex is two orders of magnitude faster than Verbatim++, showing that verified invertibility and linear-time algorithms can be developed without prohibitive cost. Compared to Coqlex, ZipLex also offers linear (instead of quadratic) time lexing, and is the first lexer that comes with invertibility proofs for printing token sequences.",
+  isbn="978-3-032-32526-6",
+  url={https://doi.org/10.1007/978-3-032-32526-6_7},
+  doi={10.1007/978-3-032-32526-6_7},
   venueshort = {CAV},
   anchor="pub-ziplex",
 }
+
 
 @inproceedings{
   gambhir2026reformalization,
