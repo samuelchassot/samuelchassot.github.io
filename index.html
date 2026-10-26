@@ -4,22 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samuel Chassot</title>
+  <meta name="description" content="Samuel Chassot, PhD candidate at LARA, EPFL, working on formal verification and programming languages with Scala and Stainless.">
+  <link rel="canonical" href="https://samuelchassot.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Samuel Chassot">
+  <meta property="og:description" content="PhD candidate at LARA, EPFL, working on formal verification and programming languages with Scala and Stainless.">
+  <meta property="og:url" content="https://samuelchassot.github.io/">
+  <meta property="og:image" content="https://samuelchassot.github.io/res/Samuel_pp.jpeg">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230bbec4'/%3E%3Cstop offset='1' stop-color='%233b82f6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='12' fill='url(%23g)'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/8c2d4754eb.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8c2d4754eb.js" crossorigin="anonymous" defer></script>
   <style>
     :root {
       --bg-accent: radial-gradient(circle at top left, rgba(11,190,196,0.16), transparent 28%),
                    radial-gradient(circle at top right, rgba(59,130,246,0.12), transparent 26%),
                    linear-gradient(180deg, #f8fbfd 0%, #f4f7fb 40%, #eef3f8 100%);
-      --surface: rgba(255, 255, 255, 0.78);
       --surface-strong: rgba(255, 255, 255, 0.92);
       --border: rgba(15, 23, 42, 0.08);
       --text: #0f172a;
       --muted: #5b6b82;
       --primary: #0bbec4;
-      --primary-dark: #0c8f94;
+      --primary-dark: #0a7378;
       --shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
       --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
       --radius-lg: 24px;
@@ -48,11 +56,14 @@
 
     a {
       color: var(--primary-dark);
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: rgba(10, 115, 120, 0.35);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration-color: currentColor;
     }
 
     img {
@@ -88,6 +99,12 @@
       align-items: center;
       gap: 12px;
       min-width: 0;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
+    }
+
+    .topbar.brand-hidden .brand {
+      opacity: 0;
+      visibility: hidden;
     }
 
     .brand-dot {
@@ -141,7 +158,7 @@
       border-radius: var(--radius-lg);
       background: linear-gradient(135deg, rgba(255,255,255,0.94), rgba(255,255,255,0.78));
       box-shadow: var(--shadow);
-      margin-bottom: 26px;
+      margin-bottom: 16px;
     }
 
     .hero::before,
@@ -205,23 +222,13 @@
       z-index: 1;
     }
 
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 16px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 13px;
-      border-radius: 999px;
-      background: rgba(11, 190, 196, 0.10);
+    .eyebrow {
+      margin-bottom: 14px;
       color: var(--primary-dark);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .hero h1 {
@@ -271,7 +278,6 @@
 
     .contact-chip:hover {
       transform: translateY(-1px);
-      text-decoration: none;
       border-color: rgba(11,190,196,0.24);
       box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
     }
@@ -295,31 +301,21 @@
       font-size: 13px;
     }
 
-    main {
-      display: grid;
-      gap: 22px;
-    }
-
     .section {
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      background: var(--surface);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
+      border-top: 1px solid var(--border);
       scroll-margin-top: 96px;
     }
 
     .section-inner {
-      padding: 28px;
+      padding: 32px 4px 36px;
     }
 
     .section h2 {
-      font-size: 1.25rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 18px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin-bottom: 20px;
     }
 
     .section p {
@@ -328,17 +324,9 @@
 
     .section p + p,
     .section p + ul,
-    .section ul + p {
+    .section ul + p,
+    .section p + .card-grid {
       margin-top: 14px;
-    }
-
-    .section ul.plain-list {
-      padding-left: 1.25rem;
-      max-width: 78ch;
-    }
-
-    .section .plain-list li + li {
-      margin-top: 0.5rem;
     }
 
     h3.subheading {
@@ -346,11 +334,15 @@
       align-items: center;
       gap: 12px;
       font-size: 0.9rem;
-      font-weight: 800;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text);
       margin: 36px 0 16px;
+    }
+
+    .section h2 + h3.subheading {
+      margin-top: 0;
     }
 
     h3.subheading::before {
@@ -386,7 +378,7 @@
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
     }
 
-    .aside-card h4 {
+    .aside-card h3 {
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: -0.01em;
@@ -442,6 +434,14 @@
       box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
     }
 
+    .card-grid.two-up {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+    }
+
+    .project-card.wide {
+      grid-column: 1 / -1;
+    }
+
     .project-card h4 {
       font-size: 1rem;
       font-weight: 700;
@@ -466,10 +466,14 @@
     /* --- Thesis mission --- */
 
     .mission {
-      font-size: 1.1rem;
+      font-size: clamp(1.3rem, 2.4vw, 1.75rem);
       font-weight: 700;
-      letter-spacing: -0.015em;
-      max-width: 60ch;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+    }
+
+    .section p.mission {
+      max-width: 34ch;
     }
 
     .mission .accent {
@@ -480,7 +484,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 14px;
-      margin-top: 14px;
+      margin-top: 20px;
     }
 
     .goal-card {
@@ -511,7 +515,7 @@
       line-height: 1;
     }
 
-    .goal-card h4 {
+    .goal-card h3 {
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: -0.01em;
@@ -531,11 +535,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 14px;
-      margin: 20px 0 36px;
-    }
-
-    .callout-grid .callout {
-      margin-top: 0;
     }
 
     .callout {
@@ -543,7 +542,6 @@
       flex-direction: column;
       align-items: flex-start;
       gap: 12px;
-      margin-top: 20px;
       padding: 16px 20px;
       border: 1px solid rgba(11, 190, 196, 0.28);
       border-radius: var(--radius-md);
@@ -559,15 +557,17 @@
       font-size: 0.88rem;
     }
 
-    /* --- Publication cards --- */
+    /* --- Publication and talk cards --- */
 
-    .pub-list {
+    .pub-list,
+    .talk-list {
       list-style: none;
       display: grid;
       gap: 12px;
     }
 
-    .pub-card {
+    .pub-card,
+    .talk-card {
       padding: 18px 20px;
       border: 1px solid rgba(15, 23, 42, 0.07);
       border-radius: var(--radius-md);
@@ -590,10 +590,12 @@
 
     .pub-title a {
       color: var(--text);
+      text-decoration: none;
     }
 
     .pub-title a:hover {
       color: var(--primary-dark);
+      text-decoration: underline;
     }
 
     .pub-authors {
@@ -602,12 +604,23 @@
       margin-top: 4px;
     }
 
+    .pub-authors a,
+    .talk-desc a {
+      color: inherit;
+      text-decoration-color: rgba(91, 107, 130, 0.4);
+    }
+
+    .pub-authors a:hover,
+    .talk-desc a:hover {
+      color: var(--primary-dark);
+    }
+
     .pub-authors .me {
       color: var(--text);
       font-weight: 600;
     }
 
-    .pub-meta {
+    .meta-row {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
@@ -655,39 +668,16 @@
       font-size: 0.8rem;
       font-weight: 700;
       white-space: nowrap;
+      text-decoration: none;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .link-pill:hover {
-      text-decoration: none;
       border-color: rgba(11,190,196,0.30);
       box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
     }
 
     /* --- Talks --- */
-
-    .talk-list {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-
-    .talk-card {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 8px 16px;
-      padding: 16px 20px;
-      border: 1px solid rgba(15, 23, 42, 0.07);
-      border-radius: var(--radius-md);
-      background: rgba(255,255,255,0.72);
-      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
-    }
-
-    .talk-main {
-      flex: 1 1 320px;
-    }
 
     .talk-title {
       font-weight: 700;
@@ -696,22 +686,25 @@
       letter-spacing: -0.01em;
     }
 
-    .talk-venue {
+    .talk-desc {
       font-size: 0.88rem;
       color: var(--muted);
       margin-top: 2px;
     }
 
+    .talk-card .meta-row {
+      margin-top: 10px;
+    }
+
     .duo-grid {
       display: grid;
       grid-template-columns: 1.25fr 0.75fr;
-      gap: 22px;
+      gap: 0 40px;
       align-items: start;
     }
 
     .duo-col {
       display: grid;
-      gap: 22px;
       align-content: start;
     }
 
@@ -785,6 +778,7 @@
       text-align: center;
       color: var(--muted);
       padding: 22px 0 8px;
+      border-top: 1px solid var(--border);
       font-size: 0.95rem;
     }
 
@@ -796,13 +790,29 @@
 
     @media (max-width: 860px) {
       .topbar {
-        border-radius: 24px;
-        align-items: flex-start;
-        flex-direction: column;
+        top: 10px;
+        padding: 6px;
+      }
+
+      .brand {
+        display: none;
       }
 
       .nav {
+        flex-wrap: nowrap;
         justify-content: flex-start;
+        gap: 2px;
+        min-width: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav a {
+        flex: 0 0 auto;
       }
 
       .hero {
@@ -823,9 +833,12 @@
         margin-top: 10px;
       }
 
-      .hero,
-      .section-inner {
+      .hero {
         padding: 22px;
+      }
+
+      .section-inner {
+        padding: 26px 2px 30px;
       }
 
       .hero h1 {
@@ -833,16 +846,21 @@
       }
 
       .contact-row {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
 
       .contact-chip {
-        width: 100%;
-        justify-content: flex-start;
+        padding: 10px 14px;
       }
 
       .nav a {
         padding: 7px 10px;
+      }
+
+      .callout-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -873,11 +891,7 @@
       </div>
 
       <div class="hero-content">
-        <div class="tag-row">
-          <span class="tag">Formal Verification</span>
-          <span class="tag">Programming Languages</span>
-          <span class="tag">Scala&nbsp;/&nbsp;Stainless</span>
-        </div>
+        <p class="eyebrow">Formal Verification · Programming Languages · Scala&nbsp;/&nbsp;Stainless</p>
         <h1>Samuel Chassot</h1>
         <p class="role">PhD candidate at <a href="https://lara.epfl.ch/">LARA</a>, EPFL, advised by <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a></p>
         <p class="tagline">I work on making software verification practical and accessible — building verified libraries and improving the tools used to prove real-world code correct.</p>
@@ -917,11 +931,11 @@
           <h2>About</h2>
           <div class="about-grid">
             <div>
-              <p>My name is Samuel Chassot. I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
+              <p>I am a PhD candidate in LARA at EPFL, Switzerland, under the guidance of <a href="https://lara.epfl.ch/~kuncak/">Prof. Viktor Kunčak</a>. My research focuses on Formal Methods and Software Verification.</p>
               <p>Before starting my PhD, I obtained an MSc in Computer Science from EPFL, Switzerland.</p>
             </div>
             <div class="aside-card">
-              <h4>Beyond research</h4>
+              <h3>Beyond research</h3>
               <ul class="interest-list">
                 <li><i class="fa-solid fa-clock" aria-hidden="true"></i><span>Watchmaking — learning and practicing the craft in my free time</span></li>
                 <li><i class="fa-solid fa-rocket" aria-hidden="true"></i><span>Space exploration and astronomy</span></li>
@@ -935,53 +949,29 @@
       <section class="section" id="research">
         <div class="section-inner">
           <h2>Research</h2>
-          <div class="callout-grid">
-          <div class="callout">
-            <p>I work on and with <a href="https://github.com/epfl-lara/stainless"><b>Stainless</b></a>, the open-source program verifier for Scala developed at LARA, which uses SMT solvers to prove programs correct or find counterexamples.</p>
-            <a class="link-pill" href="https://github.com/epfl-lara/stainless" target="_blank">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-              Stainless on GitHub
-            </a>
-          </div>
-          <div class="callout">
-            <p>Much of my verification work is open source in <a href="https://github.com/epfl-lara/bolts"><b>Bolts</b></a>, a library of verified data structures, algorithms, and programs proven correct with Stainless.</p>
-            <a class="link-pill" href="https://github.com/epfl-lara/bolts" target="_blank">
-              <i class="fa-brands fa-github" aria-hidden="true"></i>
-              Bolts on GitHub
-            </a>
-          </div>
-          </div>
-          
           <p class="mission">My thesis, in one line: make software verification <span class="accent">accessible</span>.</p>
           <div class="goal-grid">
             <div class="goal-card">
               <div class="goal-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
               <div>
-                <h4>Build verified software</h4>
+                <h3>Build verified software</h3>
                 <p>A growing library of verified data structures, regex engines, and frameworks — proven correct, not just tested.</p>
               </div>
             </div>
             <div class="goal-card">
               <div class="goal-icon"><i class="fa-solid fa-wrench" aria-hidden="true"></i></div>
               <div>
-                <h4>Build better tools</h4>
+                <h3>Build better tools</h3>
                 <p>Improving verifiers like Stainless so that proving real-world code correct takes less expert effort.</p>
               </div>
             </div>
           </div>
 
           <h3 class="subheading">Recent projects</h3>
-          <div class="card-grid">
-            <div class="project-card">
-              <h4>Verifying the Scala standard library's LongMap</h4>
-              <p>Full verification of a mutable, open-addressing hashtable from the Scala standard library. The proof uncovered a bug in the original implementation; my formally verified fix was accepted upstream. Published at IJCAR 2024.</p>
-              <div class="card-links">
-                <a class="link-pill" href="#pub-hashmap">Paper</a>
-              </div>
-            </div>
-            <div class="project-card">
+          <div class="card-grid two-up">
+            <div class="project-card wide">
               <h4>Ziplex: Verified regex matching &amp; linear-time invertible lexing</h4>
-              <p>A linear-time invertible lexer verified in Stainless, built on top of a verified regex matcher using Brzozowski derivatives. The lexer follows longest-match semantics and is invertible with respect to printing. The project includes verified performance optimizations to achieve linear-time complexity including: a verified and resuable memoization framework based on my previous work on verified mutable hash tables; the memoization of critical functions using said framework; a zipper-based implementation for efficient regular expressionderivative computation and memoization.</p>
+              <p>A linear-time invertible lexer verified in Stainless, built on top of a verified regex matcher using Brzozowski derivatives. The lexer follows longest-match semantics and is invertible with respect to printing. The project includes verified performance optimizations to achieve linear-time complexity including: a verified and reusable memoization framework based on my previous work on verified mutable hash tables; the memoization of critical functions using said framework; a zipper-based implementation for efficient regular expression derivative computation and memoization.</p>
               <div class="card-links">
                 <a class="link-pill" href="#pub-ziplex">Paper</a>
               </div>
@@ -991,6 +981,13 @@
               <p>Verification of an ASN.1/ACN serialization protocol implementation, in collaboration with the European Space Agency. Published at VMCAI 2025.</p>
               <div class="card-links">
                 <a class="link-pill" href="#pub-asn1">Paper</a>
+              </div>
+            </div>
+            <div class="project-card">
+              <h4>Verifying the Scala standard library's LongMap</h4>
+              <p>Full verification of a mutable, open-addressing hashtable from the Scala standard library. The proof uncovered a bug in the original implementation; my formally verified fix was accepted upstream. Published at IJCAR 2024.</p>
+              <div class="card-links">
+                <a class="link-pill" href="#pub-hashmap">Paper</a>
               </div>
             </div>
           </div>
@@ -1012,16 +1009,127 @@
               </div>
             </div>
           </div>
+
+          <h3 class="subheading">Tools &amp; code</h3>
+          <div class="callout-grid">
+            <div class="callout">
+              <p>I work on and with <a href="https://github.com/epfl-lara/stainless"><b>Stainless</b></a>, the open-source program verifier for Scala developed at LARA, which uses SMT solvers to prove programs correct or find counterexamples.</p>
+              <a class="link-pill" href="https://github.com/epfl-lara/stainless" target="_blank">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                Stainless on GitHub
+              </a>
+            </div>
+            <div class="callout">
+              <p>Much of my verification work is open source in <a href="https://github.com/epfl-lara/bolts"><b>Bolts</b></a>, a library of verified data structures, algorithms, and programs proven correct with Stainless.</p>
+              <a class="link-pill" href="https://github.com/epfl-lara/bolts" target="_blank">
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
+                Bolts on GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section" id="publications">
         <div class="section-inner">
           <h2>Publications</h2>
-          <ul class="pub-list" id="pub-list">
-            <noscript>
-              <li class="pub-card">JavaScript is disabled — the publication list is available as a <a href="res/publications.bib">BibTeX file</a>.</li>
-            </noscript>
+          <ul class="pub-list">
+            <!-- PUBLICATIONS:START (generated by scripts/build-publications.mjs, do not edit) -->
+            <li class="pub-card" id="pub-ziplex">
+              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-032-32526-6_7" target="_blank">Formally Verified Linear-Time Invertible Lexing</a></div>
+              <div class="pub-authors"><span class="me">Chassot, S.</span>, Kunčak, V.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2026</span>
+                <span class="venue-pill">CAV</span>
+                <span class="pub-venue">Computer Aided Verification, pp. 141–164, Springer Nature Switzerland</span>
+                <a class="link-pill" href="https://doi.org/10.1007/978-3-032-32526-6_7" target="_blank">DOI</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-gambhir2026reformalization">
+              <div class="pub-title"><a href="https://openreview.net/forum?id=jhbkIZOn5a" target="_blank">Reformalization of the Jordan Curve Theorem</a></div>
+              <div class="pub-authors">Gambhir, S., Guilloud, S., <span class="me">Chassot, S.</span></div>
+              <div class="meta-row">
+                <span class="venue-pill year">2026</span>
+                <span class="venue-pill">AI4Math</span>
+                <span class="pub-venue">3rd AI for Math Workshop: Toward Self-Evolving Scientific Agents</span>
+                <a class="link-pill" href="https://openreview.net/forum?id=jhbkIZOn5a" target="_blank">OpenReview</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-10-1145-3828727">
+              <div class="pub-title"><a href="https://doi.org/10.1145/3828727" target="_blank">Formal Autograding in a Classroom (Extended Version)</a></div>
+              <div class="pub-authors">Milovančević, D., <span class="me">Chassot, S.</span>, Bucev, M., Wojnarowski, M., Kunčak, V.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2026</span>
+                <span class="venue-pill">TOPLAS</span>
+                <span class="pub-venue">ACM Trans. Program. Lang. Syst.</span>
+                <a class="link-pill" href="https://doi.org/10.1145/3828727" target="_blank">DOI</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-10-1007-978-3-031-91121-7_7">
+              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">Formal Autograding in a Classroom</a></div>
+              <div class="pub-authors">Milovančević, D., Bucev, M., Wojnarowski, M., <span class="me">Chassot, S.</span>, Kunčak, V.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2025</span>
+                <span class="venue-pill">ESOP</span>
+                <span class="pub-venue">Programming Languages and Systems, pp. 154–174, Springer Nature Switzerland</span>
+                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-91121-7_7" target="_blank">DOI</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-asn1">
+              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">Formally Verifiable Generated ASN.1/ACN Encoders and Decoders: A Case Study</a></div>
+              <div class="pub-authors">Bucev, M., <span class="me">Chassot, S.</span>, Felix, S., Schramka, F., Kunčak, V.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2025</span>
+                <span class="venue-pill">VMCAI</span>
+                <span class="pub-venue">Verification, Model Checking, and Abstract Interpretation, pp. 185–207, Springer Nature Switzerland</span>
+                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-82703-7_9" target="_blank">DOI</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-hashmap">
+              <div class="pub-title"><a href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">Verifying a Realistic Mutable Hash Table</a></div>
+              <div class="pub-authors"><span class="me">Chassot, S.</span>, Kunčak, V.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2024</span>
+                <span class="venue-pill">IJCAR</span>
+                <span class="pub-venue">Automated Reasoning, pp. 304–314, Springer Nature Switzerland</span>
+                <a class="link-pill" href="https://doi.org/10.1007/978-3-031-63498-7_18" target="_blank">DOI</a>
+                <a class="link-pill" href="res/pdfs/realistic_mutable_hashmap.pdf" target="_blank">PDF</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-veneziano2022svshisecureverifiedsmart">
+              <div class="pub-title"><a href="https://arxiv.org/abs/2206.11786" target="_blank">SVSHI: Secure and Verified Smart Home Infrastructure</a></div>
+              <div class="pub-authors">Veneziano, A., <span class="me">Chassot, S.</span></div>
+              <div class="meta-row">
+                <span class="venue-pill year">2022</span>
+                <span class="venue-pill neutral">Preprint · Master Thesis</span>
+                <span class="pub-venue">arXiv:2206.11786</span>
+                <a class="link-pill" href="https://arxiv.org/abs/2206.11786" target="_blank">arXiv</a>
+                <a class="link-pill" href="res/pdfs/svshi_samuel_chassot_andrea_veneziano.pdf" target="_blank">PDF</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-chassot2021developmentnicdriverc">
+              <div class="pub-title"><a href="https://arxiv.org/abs/2107.12833" target="_blank">Development of a NIC driver in C#</a></div>
+              <div class="pub-authors"><span class="me">Chassot, S.</span></div>
+              <div class="meta-row">
+                <span class="venue-pill year">2021</span>
+                <span class="venue-pill neutral">Preprint</span>
+                <span class="pub-venue">arXiv:2107.12833</span>
+                <a class="link-pill" href="https://arxiv.org/abs/2107.12833" target="_blank">arXiv</a>
+                <a class="link-pill" href="res/pdfs/nic_csharp_samuel_chassot.pdf" target="_blank">PDF</a>
+              </div>
+            </li>
+            <li class="pub-card" id="pub-10-11648-j-ajcst-20210404-12">
+              <div class="pub-title"><a href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">Scaling up an Unsupervised Image-to-Image Translation Framework from Basic to Complex Scenes</a></div>
+              <div class="pub-authors">Silva, D. F. N., <span class="me">Chassot, S.</span>, Barras, L., Bhattacharjee, D., Süsstrunk, S.</div>
+              <div class="meta-row">
+                <span class="venue-pill year">2021</span>
+                <span class="venue-pill">AJCST</span>
+                <span class="pub-venue">American Journal of Computer Science and Technology 4(4), pp. 97–105</span>
+                <a class="link-pill" href="https://doi.org/10.11648/j.ajcst.20210404.12" target="_blank">DOI</a>
+                <a class="link-pill" href="res/pdfs/scaling_up_an_unsupervised_image-to-image_translation_framework_from_basic_to_complex_scenes.pdf" target="_blank">PDF</a>
+              </div>
+            </li>
+            <!-- PUBLICATIONS:END -->
           </ul>
         </div>
       </section>
@@ -1032,48 +1140,58 @@
             <h2>Talks</h2>
             <ul class="talk-list">
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">ZipLex: Formally Verified Linear-Time Invertible Lexer</div>
-                  <div class="talk-venue">CAV 2026</div>
+                <div class="talk-title">ZipLex: Formally Verified Linear-Time Invertible Lexer</div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2026</span>
+                  <span class="venue-pill">CAV</span>
+                  <a class="link-pill" href="res/pdfs/2026-Ziplex-CAV26.pdf" target="_blank">Slides</a>
                 </div>
-                <a class="link-pill" href="res/pdfs/2026-Ziplex-CAV26.pdf" target="_blank">Slides</a>
               </li>
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">Refinement Types in Scala with Stainless</div>
-                  <div class="talk-venue">With Katarzyna Marek and Matt Bovel — Scala Workshop 2026</div>
+                <div class="talk-title">Refinement Types in Scala with Stainless</div>
+                <div class="talk-desc">With Katarzyna Marek and <a href="https://matt.bovel.net/" target="_blank">Matt Bovel</a></div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2026</span>
+                  <span class="venue-pill">Scala Workshop</span>
+                  <a class="link-pill" href="https://2026.workshop.scala-lang.org/details/scala-2026/7/Refinement-Types-in-Scala-with-Stainless" target="_blank">Details</a>
+                  <a class="link-pill" href="res/pdfs/2026-Scala-Workshop-Refinement-types-for-stainless.pdf" target="_blank">Slides</a>
                 </div>
-                <a class="link-pill" href="https://2026.workshop.scala-lang.org/details/scala-2026/7/Refinement-Types-in-Scala-with-Stainless" target="_blank">Details</a>
-                <a class="link-pill" href="res/pdfs/2026-Scala-Workshop-Refinement-types-for-stainless.pdf" target="_blank">Slides</a>
               </li>
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">Mutable Cells for Memoized Lexing</div>
-                  <div class="talk-venue">Verified memoization framework for verified invertible lexing — invited talk, VIMPL 2026</div>
+                <div class="talk-title">Mutable Cells for Memoized Lexing</div>
+                <div class="talk-desc">Verified memoization framework for verified invertible lexing — invited talk</div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2026</span>
+                  <span class="venue-pill">VIMPL</span>
+                  <a class="link-pill" href="res/pdfs/2026_VIMPL_memoized_lexer.pdf" target="_blank">Slides</a>
                 </div>
-                <a class="link-pill" href="res/pdfs/2026_VIMPL_memoized_lexer.pdf" target="_blank">Slides</a>
               </li>
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">To Space and Back: Verified Serialisation</div>
-                  <div class="talk-venue">Formally verifiable generated ASN.1/ACN encoders and decoders — VMCAI 2025</div>
+                <div class="talk-title">To Space and Back: Verified Serialisation</div>
+                <div class="talk-desc">Formally verifiable generated ASN.1/ACN encoders and decoders</div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2025</span>
+                  <span class="venue-pill">VMCAI</span>
+                  <a class="link-pill" href="res/pdfs/2025_VMCAI_ASN1-ACN_Talk.pdf" target="_blank">Slides</a>
+                  <a class="link-pill" href="https://www.youtube.com/watch?v=CoWD6Pitu-E&amp;t=170s&amp;pp=ygUSdm1jYWkgMjAyNSBjaGFzc290" target="_blank">Recording</a>
                 </div>
-                <a class="link-pill" href="res/pdfs/2025_VMCAI_ASN1-ACN_Talk.pdf" target="_blank">Slides</a>
-                <a class="link-pill" href="https://www.youtube.com/watch?v=CoWD6Pitu-E&amp;t=170s&amp;pp=ygUSdm1jYWkgMjAyNSBjaGFzc290" target="_blank">Recording</a>
               </li>
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">Stainless Verifier and Composition in Verification</div>
-                  <div class="talk-venue">LMF Seminar on Software Verification, 2024</div>
+                <div class="talk-title">Stainless Verifier and Composition in Verification</div>
+                <div class="talk-desc">LMF Seminar on Software Verification</div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2024</span>
+                  <span class="venue-pill neutral">Seminar</span>
+                  <a class="link-pill" href="res/pdfs/2024_Stainless_Verifier_and_Composition_in_Verification.pdf" target="_blank">Slides</a>
                 </div>
-                <a class="link-pill" href="res/pdfs/2024_Stainless_Verifier_and_Composition_in_Verification.pdf" target="_blank">Slides</a>
               </li>
               <li class="talk-card">
-                <div class="talk-main">
-                  <div class="talk-title">Verifying a Realistic Mutable Hash Table</div>
-                  <div class="talk-venue">IJCAR 2024</div>
+                <div class="talk-title">Verifying a Realistic Mutable Hash Table</div>
+                <div class="meta-row">
+                  <span class="venue-pill year">2024</span>
+                  <span class="venue-pill">IJCAR</span>
+                  <a class="link-pill" href="res/pdfs/LongMap-IJCAR24-talk.pdf" target="_blank">Slides</a>
                 </div>
-                <a class="link-pill" href="res/pdfs/LongMap-IJCAR24-talk.pdf" target="_blank">Slides</a>
               </li>
             </ul>
           </div>
@@ -1084,16 +1202,6 @@
             <div class="section-inner">
               <h2>Education</h2>
               <ul class="timeline">
-                <li class="timeline-item">
-                  <div class="timeline-track">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-line"></div>
-                  </div>
-                  <div class="timeline-content">
-                    <div class="timeline-degree">MSc &amp; BSc in Computer Science</div>
-                    <div class="timeline-meta">EPFL, Lausanne, Switzerland · Sep 2016 – Feb 2022</div>
-                  </div>
-                </li>
                 <li class="timeline-item is-ongoing">
                   <div class="timeline-track">
                     <div class="timeline-dot"></div>
@@ -1101,7 +1209,17 @@
                   </div>
                   <div class="timeline-content">
                     <div class="timeline-degree">PhD in Computer Science</div>
-                    <div class="timeline-meta">EPFL, Lausanne, Switzerland · Sep 2022 – Ongoing</div>
+                    <div class="timeline-meta">EPFL, Lausanne, Switzerland · Sep 2022 - Ongoing</div>
+                  </div>
+                </li>
+                <li class="timeline-item">
+                  <div class="timeline-track">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-line"></div>
+                  </div>
+                  <div class="timeline-content">
+                    <div class="timeline-degree">MSc &amp; BSc in Computer Science</div>
+                    <div class="timeline-meta">EPFL, Lausanne, Switzerland · Sep 2016 - Feb 2022</div>
                   </div>
                 </li>
               </ul>
@@ -1110,10 +1228,10 @@
 
           <section class="section" id="resources">
             <div class="section-inner">
-              <h2>Miscellaneous Resources</h2>
-              <h3 class="subheading" style="margin-top: 0;">Interesting SMT queries</h3>
+              <h2>Resources</h2>
+              <h3 class="subheading">Interesting SMT queries</h3>
               <p>Interesting SMT queries I encountered in my projects. They can serve as benchmarks.</p>
-              <div class="card-grid" style="margin-top: 14px;">
+              <div class="card-grid">
                 <div class="project-card">
                   <h4>A slow cvc5 query</h4>
                   <p>Generated by Stainless when verifying a "Bit Stream" implementation for the <a href="#pub-asn1">ASN.1 project</a>. It takes a particularly long time to solve: ~100&nbsp;s on my MacBook Pro, ~230&nbsp;s on our Linux server. The smt2 file contains a comment header with options to pass to cvc5.</p>
@@ -1134,198 +1252,14 @@
   </div>
 
   <script>
+    // The hero already shows the name; only show it in the topbar once the hero scrolls away.
     (function () {
-      const BIB_URL = 'res/publications.bib';
-      const MY_LAST_NAME = 'Chassot';
-
-      // Display metadata comes from non-standard fields in the bib entries
-      // (ignored by BibTeX tools): venueshort (pill label), pdflocal (local
-      // PDF path), anchor (stable id used by "Paper" links in Research).
-
-      const COMBINING = {
-        '`': '̀', "'": '́', '^': '̂', '~': '̃',
-        '"': '̈', 'v': '̌', 'c': '̧', '=': '̄',
-        '.': '̇', 'u': '̆', 'H': '̋', 'k': '̨'
-      };
-
-      function latexToUnicode(s) {
-        const accent = (m, cmd, ch) => ch + (COMBINING[cmd] || '');
-        s = s.replace(/\{\\(["'`^~vcuHk=.])\s*\{?([a-zA-Z])\}?\}/g, accent);
-        s = s.replace(/\\(["'`^~vcuHk=.])\s*\{?([a-zA-Z])\}?/g, accent);
-        s = s.replace(/\\([&%#_])/g, '$1');
-        s = s.replace(/[{}]/g, '');
-        s = s.replace(/\s+/g, ' ').trim();
-        return s.normalize('NFC');
-      }
-
-      function escapeHtml(s) {
-        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;')
-                .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-      }
-
-      function parseBib(text) {
-        // Strip line comments (%) outside of entries.
-        text = text.split('\n').filter(l => !/^\s*%/.test(l)).join('\n');
-        const entries = [];
-        let i = 0;
-        while ((i = text.indexOf('@', i)) !== -1) {
-          const braceStart = text.indexOf('{', i);
-          if (braceStart === -1) break;
-          const type = text.slice(i + 1, braceStart).trim().toLowerCase();
-          let depth = 1, j = braceStart + 1;
-          while (j < text.length && depth > 0) {
-            if (text[j] === '{') depth++;
-            else if (text[j] === '}') depth--;
-            j++;
-          }
-          const body = text.slice(braceStart + 1, j - 1);
-          const comma = body.indexOf(',');
-          const key = body.slice(0, comma).trim();
-          entries.push({ type, key, fields: parseFields(body.slice(comma + 1)) });
-          i = j;
-        }
-        return entries;
-      }
-
-      function parseFields(s) {
-        const fields = {};
-        let i = 0;
-        while (i < s.length) {
-          const eq = s.indexOf('=', i);
-          if (eq === -1) break;
-          const name = s.slice(i, eq).replace(/[\s,]/g, '').toLowerCase();
-          let j = eq + 1;
-          while (j < s.length && /\s/.test(s[j])) j++;
-          let value = '';
-          if (s[j] === '{') {
-            let depth = 1; j++;
-            const start = j;
-            while (j < s.length && depth > 0) {
-              if (s[j] === '{') depth++;
-              else if (s[j] === '}') depth--;
-              j++;
-            }
-            value = s.slice(start, j - 1);
-          } else if (s[j] === '"') {
-            j++;
-            const start = j;
-            let depth = 0;
-            while (j < s.length && !(s[j] === '"' && depth === 0)) {
-              if (s[j] === '{') depth++;
-              else if (s[j] === '}') depth--;
-              j++;
-            }
-            value = s.slice(start, j);
-            j++;
-          } else {
-            const start = j;
-            while (j < s.length && s[j] !== ',') j++;
-            value = s.slice(start, j).trim();
-          }
-          if (name) fields[name] = value;
-          while (j < s.length && (s[j] === ',' || /\s/.test(s[j]))) j++;
-          i = j;
-        }
-        return fields;
-      }
-
-      function formatAuthors(authorField) {
-        const people = latexToUnicode(authorField).split(/\s+and\s+/i);
-        return people.map(p => {
-          let last, firsts;
-          if (p.includes(',')) {
-            const parts = p.split(',');
-            last = parts[0].trim();
-            firsts = (parts[1] || '').trim();
-          } else {
-            const tokens = p.trim().split(/\s+/);
-            last = tokens.pop() || '';
-            firsts = tokens.join(' ');
-          }
-          const initials = firsts.split(/[\s.]+/).filter(Boolean)
-            .map(n => n[0].toUpperCase() + '.').join(' ');
-          const display = escapeHtml(last + (initials ? ', ' + initials : ''));
-          return last.includes(MY_LAST_NAME)
-            ? '<span class="me">' + display + '</span>'
-            : display;
-        }).join(', ');
-      }
-
-      function venueLine(f) {
-        const parts = [];
-        const pages = f.pages ? 'pp. ' + latexToUnicode(f.pages).replace(/\s*--?\s*/, '–') : '';
-        if (f.journal) {
-          let j = latexToUnicode(f.journal);
-          if (f.volume) j += ' ' + f.volume + (f.number ? '(' + f.number + ')' : '');
-          parts.push(j);
-          if (pages) parts.push(pages);
-        } else if (f.booktitle) {
-          parts.push(latexToUnicode(f.booktitle));
-          if (pages) parts.push(pages);
-          if (f.publisher) parts.push(latexToUnicode(f.publisher));
-        } else if (f.archiveprefix && f.eprint) {
-          parts.push(f.archiveprefix + ':' + f.eprint);
-        }
-        return parts.join(', ');
-      }
-
-      function render(entries) {
-        entries = entries
-          .map((e, idx) => ({ e, idx }))
-          .sort((a, b) => (parseInt(b.e.fields.year) || 0) - (parseInt(a.e.fields.year) || 0) || a.idx - b.idx)
-          .map(x => x.e);
-
-        return entries.map(e => {
-          const f = e.fields;
-          const pdfLocal = (f.pdflocal || '').trim();
-          const title = latexToUnicode(f.title || 'Untitled');
-          // Springer-style entries carry the DOI as the entry key.
-          const doi = (f.doi || (/^10\.\d{4,9}\/\S+$/.test(e.key) ? e.key : '')).trim();
-          const doiUrl = doi ? 'https://doi.org/' + doi : '';
-          const mainUrl = doiUrl || (f.url || '').trim() || pdfLocal;
-          const isArxiv = (f.archiveprefix || '').toLowerCase() === 'arxiv';
-
-          const pill = f.venueshort ? latexToUnicode(f.venueshort) : (isArxiv ? 'Preprint' : '');
-          const pillNeutral = isArxiv || e.type === 'misc';
-
-          const links = [];
-          if (doiUrl) links.push({ href: doiUrl, label: 'DOI' });
-          if (f.url && f.url.trim() !== doiUrl) {
-            const u = f.url.trim();
-            const label = u.includes('openreview.net') ? 'OpenReview'
-              : u.includes('arxiv.org') ? 'arXiv' : 'Link';
-            links.push({ href: u, label });
-          }
-          if (pdfLocal) links.push({ href: pdfLocal, label: 'PDF' });
-
-          const id = (f.anchor || '').trim() || 'pub-' + e.key.replace(/[^a-zA-Z0-9_-]+/g, '-');
-          const titleHtml = mainUrl
-            ? '<a href="' + escapeHtml(mainUrl) + '" target="_blank">' + escapeHtml(title) + '</a>'
-            : escapeHtml(title);
-
-          return '<li class="pub-card" id="' + escapeHtml(id) + '">'
-            + '<div class="pub-title">' + titleHtml + '</div>'
-            + '<div class="pub-authors">' + formatAuthors(f.author || '') + '</div>'
-            + '<div class="pub-meta">'
-            + (f.year ? '<span class="venue-pill year">' + escapeHtml(f.year) + '</span>' : '')
-            + (pill ? '<span class="venue-pill' + (pillNeutral ? ' neutral' : '') + '">' + escapeHtml(pill) + '</span>' : '')
-            + '<span class="pub-venue">' + escapeHtml(venueLine(f)) + '</span>'
-            + links.map(l => '<a class="link-pill" href="' + escapeHtml(l.href) + '" target="_blank">' + l.label + '</a>').join('')
-            + '</div></li>';
-        }).join('');
-      }
-
-      const list = document.getElementById('pub-list');
-      fetch(BIB_URL)
-        .then(r => { if (!r.ok) throw new Error(r.status); return r.text(); })
-        .then(text => {
-          list.innerHTML = render(parseBib(text));
-          // Re-trigger :target highlight if the page loaded with a #pub- hash.
-          if (location.hash) location.replace(location.hash);
-        })
-        .catch(() => {
-          list.innerHTML = '<li class="pub-card">Could not load the publication list. It is available as a <a href="' + BIB_URL + '">BibTeX file</a>.</li>';
-        });
+      const topbar = document.querySelector('.topbar');
+      const hero = document.querySelector('.hero');
+      if (!('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([entry]) => {
+        topbar.classList.toggle('brand-hidden', entry.isIntersecting);
+      }, { rootMargin: '-80px 0px 0px 0px' }).observe(hero);
     })();
   </script>
 </body>
